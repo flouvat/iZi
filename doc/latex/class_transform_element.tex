@@ -1,0 +1,67 @@
+\section{Transform\-Element$<$ Transform\-Set, Sets\-Type, Word\-To\-Set, Word $>$ Class Template Reference}
+\label{class_transform_element}\index{TransformElement@{TransformElement}}
+Functor used to transform elements of the langugage.  
+
+
+{\tt \#include $<$Transform\-Element.hxx$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf Transform\-Element} (Word\-To\-Set $\ast$inwordtoset, Transform\-Set $\ast$intransformset)\label{class_transform_element_719623f74be497a502346662d13cf4ef}
+
+\begin{CompactList}\small\item\em Constructor. \item\end{CompactList}\item 
+template$<$class Iterator\-Word$>$ vector$<$ Sets\-Type $>$ $\ast$ {\bf operator()} (Iterator\-Word w)
+\begin{CompactList}\small\item\em Operator applying the transformations functions. \item\end{CompactList}\item 
+template$<$class Iterator\-Set$>$ Word $\ast$ {\bf inverse} (Iterator\-Set s)
+\begin{CompactList}\small\item\em Method returning original element. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+Word\-To\-Set $\ast$ {\bf wordtoset}\label{class_transform_element_2b9cd853fe9bbf27160693c29b7d666c}
+
+\begin{CompactList}\small\item\em Functor to transform a word into a set. \item\end{CompactList}\item 
+Transform\-Set $\ast$ {\bf transformset}\label{class_transform_element_1c5bcca50f2850e15b2066da3b7b4305}
+
+\begin{CompactList}\small\item\em Functor to transform a set. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Transform\-Set, class Sets\-Type, class Word\-To\-Set, class Word = vector$<$ Sets\-Type $>$$>$ class Transform\-Element$<$ Transform\-Set, Sets\-Type, Word\-To\-Set, Word $>$}
+
+Functor used to transform elements of the langugage. 
+
+This class could be used to transform words of the language into sets and to eventually transform the sets. The template parameter Word\-To\-Set is the type of the function that transforms the language in sets. The template parameter Transform\-Set is the type of the function that transforms the sets. The template parameter Sets\-Type is the type of the sets elements. 
+
+
+
+\subsection{Member Function Documentation}
+\index{TransformElement@{Transform\-Element}!inverse@{inverse}}
+\index{inverse@{inverse}!TransformElement@{Transform\-Element}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Transform\-Set, class Sets\-Type, class Word\-To\-Set, class Word = vector$<$ Sets\-Type $>$$>$ template$<$class Iterator\-Set$>$ Word$\ast$ {\bf Transform\-Element}$<$ Transform\-Set, Sets\-Type, Word\-To\-Set, Word $>$::inverse (Iterator\-Set {\em s})\hspace{0.3cm}{\tt  [inline]}}\label{class_transform_element_c7fc099ae3e5f139a9539e82788823f3}
+
+
+Method returning original element. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em s}]set to transform in the origianl word \end{description}
+\end{Desc}
+\index{TransformElement@{Transform\-Element}!operator()@{operator()}}
+\index{operator()@{operator()}!TransformElement@{Transform\-Element}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Transform\-Set, class Sets\-Type, class Word\-To\-Set, class Word = vector$<$ Sets\-Type $>$$>$ template$<$class Iterator\-Word$>$ vector$<$Sets\-Type$>$$\ast$ {\bf Transform\-Element}$<$ Transform\-Set, Sets\-Type, Word\-To\-Set, Word $>$::operator() (Iterator\-Word {\em w})\hspace{0.3cm}{\tt  [inline]}}\label{class_transform_element_cfa1c9f1f11a8400bf8654b4bc03eb06}
+
+
+Operator applying the transformations functions. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em w}]word to transform into set \end{description}
+\end{Desc}
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+F:/i\-Zi/algorithms/Transform\-Element.hxx\end{CompactItemize}

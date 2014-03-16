@@ -1,0 +1,58 @@
+\section{Init\-DI\_\-DBMS$<$ DBMS $>$ Class Template Reference}
+\label{class_init_d_i___d_b_m_s}\index{InitDI_DBMS@{InitDI\_\-DBMS}}
+Functor used to intialize the {\bf DI}{\rm (p.\,\pageref{class_d_i})} mining.  
+
+
+{\tt \#include $<$Init\-DI\_\-DBMS.hxx$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf Init\-DI\_\-DBMS} (DBMS $\ast$in\-Dbms)
+\begin{CompactList}\small\item\em Constructor. \item\end{CompactList}\item 
+void {\bf operator()} ()\label{class_init_d_i___d_b_m_s_af402c1c47b48d2451b50f053a48472e}
+
+\begin{CompactList}\small\item\em Execute the initialization of the basic word of the language (the di of size 1) in the algorithm. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+deque$<$ {\bf DI} $>$ {\bf list\-Elements}\label{class_init_d_i___d_b_m_s_09117bbeb3d2d54345f10c51e4adf2e2}
+
+\begin{CompactList}\small\item\em list of the unary {\bf DI}{\rm (p.\,\pageref{class_d_i})} \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+DBMS $\ast$ {\bf mydbms}\label{class_init_d_i___d_b_m_s_aa17c74cfc15150da496ba7a3b7c4877}
+
+\begin{CompactList}\small\item\em Pointer on the dbms. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class DBMS$>$ class Init\-DI\_\-DBMS$<$ DBMS $>$}
+
+Functor used to intialize the {\bf DI}{\rm (p.\,\pageref{class_d_i})} mining. 
+
+This functor is used to search the attributes of the relations and to construct the initial set unary DIs.
+
+The template parameter DBMS is the class representing the connection to the DBMS. This class is used to do operations on the DBMS such as connect, execute a query ... 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{InitDI_DBMS@{Init\-DI\_\-DBMS}!InitDI_DBMS@{InitDI\_\-DBMS}}
+\index{InitDI_DBMS@{InitDI\_\-DBMS}!InitDI_DBMS@{Init\-DI\_\-DBMS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class DBMS$>$ {\bf Init\-DI\_\-DBMS}$<$ DBMS $>$::{\bf Init\-DI\_\-DBMS} (DBMS $\ast$ {\em in\-Dbms})\hspace{0.3cm}{\tt  [inline]}}\label{class_init_d_i___d_b_m_s_a750a48a13b374b15676d7f73c8c0bfb}
+
+
+Constructor. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Dbms}]pointer on the DBMS object to consider \end{description}
+\end{Desc}
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+F:/i\-Zi/problems/DI/Init\-DI\_\-DBMS.hxx\end{CompactItemize}

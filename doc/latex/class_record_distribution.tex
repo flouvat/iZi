@@ -1,0 +1,107 @@
+\section{Record\-Distribution$<$ Output $>$ Class Template Reference}
+\label{class_record_distribution}\index{RecordDistribution@{RecordDistribution}}
+Class used to store the distribution of a solution find by an algorithm (and evantually save the solution in an output object).  
+
+
+{\tt \#include $<$Record\-Distribution.hxx$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf Record\-Distribution} (Output $\ast$inobjectwrapped=0)\label{class_record_distribution_3a21d8d0c0f191202986d518ed1fcf49}
+
+\begin{CompactList}\small\item\em Constructor. \item\end{CompactList}\item 
+virtual {\bf $\sim$Record\-Distribution} ()\label{class_record_distribution_5b8461d785ece13a14f24163b086b340}
+
+\begin{CompactList}\small\item\em Destructor. \item\end{CompactList}\item 
+vector$<$ int $>$ \& {\bf distribution} ()\label{class_record_distribution_d116898ebb6a753623e55f89063aaf53}
+
+\begin{CompactList}\small\item\em Function to access the container storing the ditribution. \item\end{CompactList}\item 
+template$<$class Container, class Measure$>$ void {\bf push\_\-back} (Container \&set\-Element, Measure measure)
+\begin{CompactList}\small\item\em Function called when a solution is find, and used to store informations and eventually store the solution in another output object. \item\end{CompactList}\item 
+template$<$class Container$>$ void {\bf push\_\-back} (Container \&set\-Element, {\bf Boolean} measure)
+\begin{CompactList}\small\item\em Function called when a solution is find. \item\end{CompactList}\item 
+template$<$class Container$>$ void {\bf push\_\-back} (Container \&set\-Element)
+\begin{CompactList}\small\item\em Function called when a solution is find, and used to store informations and eventually store the solution in another output object. \item\end{CompactList}\item 
+template$<$class Input\-Iterator, class Measure$>$ void {\bf push\_\-back} (Input\-Iterator first, Input\-Iterator last, Measure measure)
+\begin{CompactList}\small\item\em Function called when a solution is find, and used to store informations and eventually store the solution in another output object. \item\end{CompactList}\item 
+int {\bf size} ()\label{class_record_distribution_df406703f289b76e764dbb11f17442e7}
+
+\begin{CompactList}\small\item\em Get the number of levels studied. \item\end{CompactList}\item 
+int \& {\bf operator[$\,$]} (const int \&i)\label{class_record_distribution_a6a9e7b9f8bae800c8c1fdd12b402b91}
+
+\begin{CompactList}\small\item\em Access the number elements of size i. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+vector$<$ int $>$ {\bf distrib}\label{class_record_distribution_bef4620c1ab9333fea93eb5811c8b2d3}
+
+\begin{CompactList}\small\item\em distribution of the elements of the solution \item\end{CompactList}\item 
+Output $\ast$ {\bf objectwrapped}\label{class_record_distribution_e4b17eb76d6b043a0d8e637c901d3b69}
+
+\begin{CompactList}\small\item\em Pointer on the ouput object wrapped. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Output = No\-Output$>$ class Record\-Distribution$<$ Output $>$}
+
+Class used to store the distribution of a solution find by an algorithm (and evantually save the solution in an output object). 
+
+The objects of this class are passed in parameter of the algorithm by using the output parameters. For example, suppose that we have an algorithm that process the theory of a language. This algorithm will have at least 3 parameters: the initialization functor of the language, the predicate and an object to output the theory. This output object could be a file, a data structure or a \char`\"{}statistical\char`\"{} object that records some informations about the elements of the solution. The current class is such a \char`\"{}statistical\char`\"{} output class, and it is used to store the distribution of the elements of the solution, ie the number of elements wrt to their size. Since it should be possible to record stat and save solution in a file or a dat structure, this class could be a wrapper to such objects. This way this class could record informations and save solutions in the output object wrapped at the same time and transparently.. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RecordDistribution@{Record\-Distribution}!push_back@{push\_\-back}}
+\index{push_back@{push\_\-back}!RecordDistribution@{Record\-Distribution}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Output = No\-Output$>$ template$<$class Input\-Iterator, class Measure$>$ void {\bf Record\-Distribution}$<$ Output $>$::push\_\-back (Input\-Iterator {\em first}, Input\-Iterator {\em last}, Measure {\em measure})\hspace{0.3cm}{\tt  [inline]}}\label{class_record_distribution_cbe7f0b5cc0f3a0b8f377dfa458f29dd}
+
+
+Function called when a solution is find, and used to store informations and eventually store the solution in another output object. 
+
+The template parameter represents the input iterators on the integers to insert in the file. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em first}]iterator on the first element. \item[{\em last}]iterator on the element after the last. \item[{\em measure}]additional measure assoiated with the element. \end{description}
+\end{Desc}
+\index{RecordDistribution@{Record\-Distribution}!push_back@{push\_\-back}}
+\index{push_back@{push\_\-back}!RecordDistribution@{Record\-Distribution}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Output = No\-Output$>$ template$<$class Container$>$ void {\bf Record\-Distribution}$<$ Output $>$::push\_\-back (Container \& {\em set\-Element})\hspace{0.3cm}{\tt  [inline]}}\label{class_record_distribution_de2a7208d4488d81d383f10965b34cff}
+
+
+Function called when a solution is find, and used to store informations and eventually store the solution in another output object. 
+
+This function corresponds to the classic {\bf push\_\-back( )}{\rm (p.\,\pageref{class_record_distribution_68c52a30268722a731552ee98657f761})} function od STL container. The template parameter represents a container of elements. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em set\-Element}]the set of element to insert in the file. \item[{\em measure}]additional measure assoiated with the element. \end{description}
+\end{Desc}
+\index{RecordDistribution@{Record\-Distribution}!push_back@{push\_\-back}}
+\index{push_back@{push\_\-back}!RecordDistribution@{Record\-Distribution}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Output = No\-Output$>$ template$<$class Container$>$ void {\bf Record\-Distribution}$<$ Output $>$::push\_\-back (Container \& {\em set\-Element}, {\bf Boolean} {\em measure})\hspace{0.3cm}{\tt  [inline]}}\label{class_record_distribution_1ded57b0d84d851147c160e44036a05e}
+
+
+Function called when a solution is find. 
+
+This function corresponds to the classic {\bf push\_\-back( )}{\rm (p.\,\pageref{class_record_distribution_68c52a30268722a731552ee98657f761})} function od STL container. The template parameter represents a container of elements. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em set\-Element}]the set of element to insert in the file. \end{description}
+\end{Desc}
+\index{RecordDistribution@{Record\-Distribution}!push_back@{push\_\-back}}
+\index{push_back@{push\_\-back}!RecordDistribution@{Record\-Distribution}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Output = No\-Output$>$ template$<$class Container, class Measure$>$ void {\bf Record\-Distribution}$<$ Output $>$::push\_\-back (Container \& {\em set\-Element}, Measure {\em measure})\hspace{0.3cm}{\tt  [inline]}}\label{class_record_distribution_68c52a30268722a731552ee98657f761}
+
+
+Function called when a solution is find, and used to store informations and eventually store the solution in another output object. 
+
+This function corresponds to the classic {\bf push\_\-back( )}{\rm (p.\,\pageref{class_record_distribution_68c52a30268722a731552ee98657f761})} function od STL container. The template parameter represents a container of elements. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em set\-Element}]the set of element to insert in the file. \item[{\em measure}]additional measure assoiated with the element. \end{description}
+\end{Desc}
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+F:/i\-Zi/util/Record\-Distribution.hxx\end{CompactItemize}

@@ -1,0 +1,252 @@
+\section{Tabular\-DBFile Class Reference}
+\label{class_tabular_d_b_file}\index{TabularDBFile@{TabularDBFile}}
+Read a tabular db and save solution in a file in the FIMI format.  
+
+
+{\tt \#include $<$Tabular\-DBFile.hxx$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf Tabular\-DBFile} (char $\ast$in\-File\-Name, {\bf Recode\-To\-Int}$<$ string $>$ $\ast$inrecode\-Tuples=0)
+\begin{CompactList}\small\item\em Constructor. \item\end{CompactList}\item 
+virtual {\bf $\sim$Tabular\-DBFile} ()
+\begin{CompactList}\small\item\em Destructor. \item\end{CompactList}\item 
+template$<$class Container\-Bd\-R$>$ {\bf Tabular\-DBFile} \& {\bf operator$>$$>$} (Container\-Bd\-R \&container)
+\begin{CompactList}\small\item\em Extract data of the file and insert it in a container. \item\end{CompactList}\item 
+template$<$class Container\-Set$>$ {\bf Tabular\-DBFile} \& {\bf operator$<$$<$} (Container\-Set \&container)
+\begin{CompactList}\small\item\em Extract data of the container (set of itemsets) and insert it in the file. \item\end{CompactList}\item 
+template$<$class Container, class Val$>$ void {\bf push\_\-back} (Container \&set\-Element, Val supp)
+\begin{CompactList}\small\item\em Insert an itemset in the file. \item\end{CompactList}\item 
+template$<$class Container$>$ void {\bf push\_\-back} (Container \&set\-Element)
+\begin{CompactList}\small\item\em Insert an itemset in the file. \item\end{CompactList}\item 
+template$<$class Input\-Iterator, class Val$>$ void {\bf push\_\-back} (Input\-Iterator first, Input\-Iterator last, Val supp)
+\begin{CompactList}\small\item\em Insert a set of element in the file. \item\end{CompactList}\item 
+template$<$class Input\-Iterator, class Val$>$ void {\bf push\_\-back} (Input\-Iterator first, Input\-Iterator last)
+\begin{CompactList}\small\item\em Insert a set of element in the file. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+vector$<$ string $>$ {\bf attributes}\label{class_tabular_d_b_file_a2966fce4c41b8ee7c386c3ff663afd6}
+
+\begin{CompactList}\small\item\em List of all the attributes. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Member Functions}
+\begin{CompactItemize}
+\item 
+template$<$class Container\-Tuple$>$ bool {\bf read\-Tuple} (Container\-Tuple \&tuple, {\bf Recode\-To\-Int}$<$ string $>$ $\ast$in\-Recode\-Tuples)
+\begin{CompactList}\small\item\em Function reading a tuple in the file. \item\end{CompactList}\item 
+template$<$class Container\-Attrib$>$ bool {\bf read\-Attrib} (Container\-Attrib \&attrib)
+\begin{CompactList}\small\item\em Function reading the attributes in the file. \item\end{CompactList}\item 
+template$<$class Container\-Bd\-T$>$ bool {\bf read} (Container\-Bd\-T \&container, {\bf Recode\-To\-Int}$<$ string $>$ $\ast$in\-Recode\-Tuples=0)
+\begin{CompactList}\small\item\em Function reading data in a file and store it in a container. \item\end{CompactList}\item 
+template$<$class Iterator, class Val$>$ void {\bf write} (Iterator begin, Iterator end, Val \&supp)
+\begin{CompactList}\small\item\em Function write data in a file. \item\end{CompactList}\item 
+template$<$class Iterator$>$ void {\bf write} (Iterator begin, Iterator end)
+\begin{CompactList}\small\item\em Function write data in a file. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+char $\ast$ {\bf file\-Name}\label{class_tabular_d_b_file_d48b2a86d8e34a7ad1f4f5872a6586f0}
+
+\begin{CompactList}\small\item\em name of the file to used \item\end{CompactList}\item 
+ifstream {\bf readfile}\label{class_tabular_d_b_file_0a3868d33194605eadb13364e948daf4}
+
+\begin{CompactList}\small\item\em Stream to read in the file. \item\end{CompactList}\item 
+ofstream {\bf writefile}\label{class_tabular_d_b_file_b4ed25e63980291bd4dbb9c7ba42fe06}
+
+\begin{CompactList}\small\item\em Stream to write in the file. \item\end{CompactList}\item 
+{\bf Recode\-To\-Int}$<$ string $>$ $\ast$ {\bf recode\-Tuples}\label{class_tabular_d_b_file_575cf6ce6322a34660235ca35fe5b6a2}
+
+\begin{CompactList}\small\item\em {\bf Recode}{\rm (p.\,\pageref{class_recode})} the value of the tuples in integer. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+class {\bf save\-Container\-In\-File}
+\begin{CompactList}\small\item\em Functor used to save a solution in the file. \item\end{CompactList}\item 
+class {\bf save\-Elem\-In\-File}
+\begin{CompactList}\small\item\em Functore used to save an element of a solution in the file. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Read a tabular db and save solution in a file in the FIMI format. 
+
+The input functions of this class read tabular data stored in a file having the following format:\begin{itemize}
+\item first line -$>$ list of the attributes separadte by \char`\"{};\char`\"{}\item each line -$>$ one tuple with the values separated by \char`\"{};\char`\"{} The output functions of this class store the solutions in a file in the FIMI format:\item one line -$>$ an element (set of attributes) of the solution\item last value -$>$ the cardinality of the projection of the attributres on the data\end{itemize}
+
+
+The values int the tuples are recoded to int when stored in memory to occupy less memory 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{TabularDBFile@{Tabular\-DBFile}!TabularDBFile@{TabularDBFile}}
+\index{TabularDBFile@{TabularDBFile}!TabularDBFile@{Tabular\-DBFile}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Tabular\-DBFile::Tabular\-DBFile (char $\ast$ {\em in\-File\-Name}, {\bf Recode\-To\-Int}$<$ string $>$ $\ast$ {\em inrecode\-Tuples} = {\tt 0})\hspace{0.3cm}{\tt  [inline]}}\label{class_tabular_d_b_file_9dc7164b66cb23bcbf55647d4469e21d}
+
+
+Constructor. 
+
+The constructor open the file and keep it open until the destruction of the object.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-File\-Name}]name of the file to access \item[{\em inrecode\-Val\-Attrib}]recode function to recode values of the tuples in int \end{description}
+\end{Desc}
+\index{TabularDBFile@{Tabular\-DBFile}!~TabularDBFile@{$\sim$TabularDBFile}}
+\index{~TabularDBFile@{$\sim$TabularDBFile}!TabularDBFile@{Tabular\-DBFile}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}virtual Tabular\-DBFile::$\sim$Tabular\-DBFile ()\hspace{0.3cm}{\tt  [inline, virtual]}}\label{class_tabular_d_b_file_9d038f6432720287f5a5aca26ab8df2e}
+
+
+Destructor. 
+
+The destructor close the file. 
+
+\subsection{Member Function Documentation}
+\index{TabularDBFile@{Tabular\-DBFile}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!TabularDBFile@{Tabular\-DBFile}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Set$>$ {\bf Tabular\-DBFile}\& Tabular\-DBFile::operator$<$$<$ (Container\-Set \& {\em container})\hspace{0.3cm}{\tt  [inline]}}\label{class_tabular_d_b_file_e482df0bdff0ce8b734a3a3a2a255aed}
+
+
+Extract data of the container (set of itemsets) and insert it in the file. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em container}]where the data is read (using iterators) and inserted in the file. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]$\ast$this. \end{Desc}
+\index{TabularDBFile@{Tabular\-DBFile}!operator>>@{operator$>$$>$}}
+\index{operator>>@{operator$>$$>$}!TabularDBFile@{Tabular\-DBFile}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Bd\-R$>$ {\bf Tabular\-DBFile}\& Tabular\-DBFile::operator$>$$>$ (Container\-Bd\-R \& {\em container})\hspace{0.3cm}{\tt  [inline]}}\label{class_tabular_d_b_file_6b9390b5d1e89edc3f33f1968a711308}
+
+
+Extract data of the file and insert it in a container. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em container}]where the data read is inserted (must have a push\_\-back function). \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]$\ast$this. \end{Desc}
+\index{TabularDBFile@{Tabular\-DBFile}!push_back@{push\_\-back}}
+\index{push_back@{push\_\-back}!TabularDBFile@{Tabular\-DBFile}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-Iterator, class Val$>$ void Tabular\-DBFile::push\_\-back (Input\-Iterator {\em first}, Input\-Iterator {\em last})\hspace{0.3cm}{\tt  [inline]}}\label{class_tabular_d_b_file_67bb4415de2083b4f4dc550f60e8bbf1}
+
+
+Insert a set of element in the file. 
+
+The template parameter represents the input iterators on the integers to insert in the file. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em first}]iterator on the first element. \item[{\em last}]iterator on the element after the last. \end{description}
+\end{Desc}
+\index{TabularDBFile@{Tabular\-DBFile}!push_back@{push\_\-back}}
+\index{push_back@{push\_\-back}!TabularDBFile@{Tabular\-DBFile}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-Iterator, class Val$>$ void Tabular\-DBFile::push\_\-back (Input\-Iterator {\em first}, Input\-Iterator {\em last}, Val {\em supp})\hspace{0.3cm}{\tt  [inline]}}\label{class_tabular_d_b_file_3b938a6817ad2b62ece9f6697625252b}
+
+
+Insert a set of element in the file. 
+
+The template parameter represents the input iterators on the integers to insert in the file. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em first}]iterator on the first element. \item[{\em last}]iterator on the element after the last. \item[{\em supp}]the support of the itemset. \end{description}
+\end{Desc}
+\index{TabularDBFile@{Tabular\-DBFile}!push_back@{push\_\-back}}
+\index{push_back@{push\_\-back}!TabularDBFile@{Tabular\-DBFile}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container$>$ void Tabular\-DBFile::push\_\-back (Container \& {\em set\-Element})\hspace{0.3cm}{\tt  [inline]}}\label{class_tabular_d_b_file_6a6bac3812d26f797c4544beb8437d27}
+
+
+Insert an itemset in the file. 
+
+This function corresponds to the classic {\bf push\_\-back( )}{\rm (p.\,\pageref{class_tabular_d_b_file_548d79f25d83bd10f9dbfbf542d22b1a})} function od STL container. The template parameter represents a container of integers. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em set\-Element}]the set of element to insert in the file. \end{description}
+\end{Desc}
+\index{TabularDBFile@{Tabular\-DBFile}!push_back@{push\_\-back}}
+\index{push_back@{push\_\-back}!TabularDBFile@{Tabular\-DBFile}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container, class Val$>$ void Tabular\-DBFile::push\_\-back (Container \& {\em set\-Element}, Val {\em supp})\hspace{0.3cm}{\tt  [inline]}}\label{class_tabular_d_b_file_548d79f25d83bd10f9dbfbf542d22b1a}
+
+
+Insert an itemset in the file. 
+
+This function corresponds to the classic {\bf push\_\-back( )}{\rm (p.\,\pageref{class_tabular_d_b_file_548d79f25d83bd10f9dbfbf542d22b1a})} function od STL container. The template parameter represents a container of integers. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em set\-Element}]the set of element to insert in the file. \item[{\em supp}]the support of the itemset. \end{description}
+\end{Desc}
+\index{TabularDBFile@{Tabular\-DBFile}!read@{read}}
+\index{read@{read}!TabularDBFile@{Tabular\-DBFile}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Bd\-T$>$ bool Tabular\-DBFile::read (Container\-Bd\-T \& {\em container}, {\bf Recode\-To\-Int}$<$ string $>$ $\ast$ {\em in\-Recode\-Tuples} = {\tt 0})\hspace{0.3cm}{\tt  [protected]}}\label{class_tabular_d_b_file_2767edf34b755fb5c3fc672dfdde32f7}
+
+
+Function reading data in a file and store it in a container. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em container}]where the data read is inserted (must have a push\_\-back function). \item[{\em in\-Recode\-Tuples}]to recode the values of the tuples in int \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]true if data has been read. \end{Desc}
+\index{TabularDBFile@{Tabular\-DBFile}!readAttrib@{readAttrib}}
+\index{readAttrib@{readAttrib}!TabularDBFile@{Tabular\-DBFile}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Attrib$>$ bool Tabular\-DBFile::read\-Attrib (Container\-Attrib \& {\em attrib})\hspace{0.3cm}{\tt  [protected]}}\label{class_tabular_d_b_file_455cbe09d821a2c4b71766e5338653bd}
+
+
+Function reading the attributes in the file. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em attrib}]stores the attributes (must have a push\_\-back function). \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]false if end of file \end{Desc}
+\index{TabularDBFile@{Tabular\-DBFile}!readTuple@{readTuple}}
+\index{readTuple@{readTuple}!TabularDBFile@{Tabular\-DBFile}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Tuple$>$ bool Tabular\-DBFile::read\-Tuple (Container\-Tuple \& {\em tuple}, {\bf Recode\-To\-Int}$<$ string $>$ $\ast$ {\em in\-Recode\-Tuples})\hspace{0.3cm}{\tt  [protected]}}\label{class_tabular_d_b_file_d5a96f52ba726269c868339f1fc585fd}
+
+
+Function reading a tuple in the file. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em tuple}]stores the tuple (must have a push\_\-back function). \item[{\em in\-Recode\-Tuples}]to recode the values of the tuples in int \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]false if end of file \end{Desc}
+\index{TabularDBFile@{Tabular\-DBFile}!write@{write}}
+\index{write@{write}!TabularDBFile@{Tabular\-DBFile}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Iterator$>$ void Tabular\-DBFile::write (Iterator {\em begin}, Iterator {\em end})\hspace{0.3cm}{\tt  [protected]}}\label{class_tabular_d_b_file_bbf288b62789372257be6f7617fd6ec7}
+
+
+Function write data in a file. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em container}]to read and write in the output. \item[{\em recode}]functor used to recode the data read and store the mapping. \end{description}
+\end{Desc}
+\index{TabularDBFile@{Tabular\-DBFile}!write@{write}}
+\index{write@{write}!TabularDBFile@{Tabular\-DBFile}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Iterator, class Val$>$ void Tabular\-DBFile::write (Iterator {\em begin}, Iterator {\em end}, Val \& {\em supp})\hspace{0.3cm}{\tt  [protected]}}\label{class_tabular_d_b_file_b6c2a304ce4003222dd2e89b9d933765}
+
+
+Function write data in a file. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em container}]to read and write in the output. \item[{\em recode}]functor used to recode the data read and store the mapping. \item[{\em supp}]the support of the itemset. \end{description}
+\end{Desc}
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+F:/i\-Zi/data/file/Tabular\-DBFile.hxx\end{CompactItemize}

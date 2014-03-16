@@ -1,0 +1,181 @@
+\section{It\-PTree$<$ Sets\-Type, Measure $>$ Class Template Reference}
+\label{class_it_p_tree}\index{ItPTree@{ItPTree}}
+Iterator on a {\bf PTree}{\rm (p.\,\pageref{class_p_tree})} (trie data structure).  
+
+
+{\tt \#include $<$It\-PTree.hxx$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+void {\bf next\-Itemset} ({\bf It\-PTree} $\ast$)\label{class_it_p_tree_00480e1f67fe1114bd8ea3811dba2c63}
+
+\begin{CompactList}\small\item\em search the last node of the next itemset. \item\end{CompactList}\item 
+void {\bf get\-Set} (vector$<$ int $>$ $\ast$inset, {\bf It\-PTree} $\ast$it)
+\begin{CompactList}\small\item\em Get the set (internal id ) stored in the node pointed by the iterator passed in parameter. \item\end{CompactList}\item 
+{\bf It\-PTree} ({\bf Node}$<$ Sets\-Type, Measure $>$ $\ast$currnode=0, int ininternal\-Id=0, {\bf Recode\-To\-Int}$<$ Sets\-Type $>$ $\ast$inrecode=0, int inheight=0)\label{class_it_p_tree_b45ae5524947493010acbcdc17b5889d}
+
+\begin{CompactList}\small\item\em Default constructor. \item\end{CompactList}\item 
+{\bf It\-PTree} ({\bf PTree}$<$ Sets\-Type, Measure $>$ $\ast$)\label{class_it_p_tree_794673b75fe375180e69425c1342aa46}
+
+\begin{CompactList}\small\item\em Contructor setting the iterator on the first set of the trie. \item\end{CompactList}\item 
+{\bf It\-PTree} ({\bf Node}$<$ Sets\-Type, Measure $>$ $\ast$, {\bf Recode\-To\-Int}$<$ Sets\-Type $>$ $\ast$)\label{class_it_p_tree_e31d719e378bd26422db9ef26e6e2f34}
+
+\begin{CompactList}\small\item\em Contructor setting the iterator on the first leaf of the trie. \item\end{CompactList}\item 
+{\bf It\-PTree} (const {\bf It\-PTree} \&it)\label{class_it_p_tree_117622ebdf8424515868e2de71586c6a}
+
+\begin{CompactList}\small\item\em Copy constructor. \item\end{CompactList}\item 
+{\bf It\-PTree} \& {\bf operator=} (const {\bf It\-PTree} \&it)\label{class_it_p_tree_4f4f9bf0510afd02ceae063985f4366c}
+
+\begin{CompactList}\small\item\em Affectation operator. \item\end{CompactList}\item 
+{\bf $\sim$It\-PTree} ()\label{class_it_p_tree_52ad99488e1ce902784c99f5a1b74ebb}
+
+\begin{CompactList}\small\item\em Destructor. \item\end{CompactList}\item 
+vector$<$ Sets\-Type $>$ \& {\bf operator $\ast$} ()\label{class_it_p_tree_1fd34185f8b28f6029c93142b705373c}
+
+\begin{CompactList}\small\item\em Operator returning the current set. \item\end{CompactList}\item 
+vector$<$ Sets\-Type $>$ $\ast$ {\bf operator $\rightarrow$ } ()\label{class_it_p_tree_dfd046def36cc49a70979af63d38a03a}
+
+\begin{CompactList}\small\item\em Operator returning a pointer on the current set. \item\end{CompactList}\item 
+bool {\bf operator==} (const {\bf It\-PTree} \&it) const \label{class_it_p_tree_b9077c68640add8a17995fd47157d457}
+
+\begin{CompactList}\small\item\em Equality operator. \item\end{CompactList}\item 
+bool {\bf operator!=} (const {\bf It\-PTree} \&it) const \label{class_it_p_tree_6cc6bc3ccd5755ef7a91a8b3ecd73ee5}
+
+\begin{CompactList}\small\item\em Difference operator. \item\end{CompactList}\item 
+{\bf It\-PTree} \& {\bf operator++} ()\label{class_it_p_tree_0e42ede29d18334dcedbb0656b8372a7}
+
+\begin{CompactList}\small\item\em Move the iterator on the next set stored (not necessarely on a leaf node for subsets). \item\end{CompactList}\item 
+{\bf It\-PTree} {\bf operator++} (int)\label{class_it_p_tree_92399b9aead4b4e16fc1996fa52d2e55}
+
+\begin{CompactList}\small\item\em Move the iterator on the next set stored (not necessarely on a leaf node for subsets). \item\end{CompactList}\item 
+bool {\bf isa\-Leaf} ()
+\begin{CompactList}\small\item\em Function returning if the iterrator is on a leaf node. \item\end{CompactList}\item 
+{\bf It\-PTree} {\bf parent\-Node} ()
+\begin{CompactList}\small\item\em Return an iterator on the parent node. \item\end{CompactList}\item 
+{\bf It\-PTree} {\bf child\-Node} (Sets\-Type elem)
+\begin{CompactList}\small\item\em Return an iterator on a child node (of the current node) containing the element elem . \item\end{CompactList}\item 
+{\bf It\-PTree} {\bf next\-Child\-Node} ()
+\begin{CompactList}\small\item\em Return an iterator on the next (wrt order of elements) child node of the current parent node. \item\end{CompactList}\item 
+{\bf It\-PTree} {\bf next\-Leaf} ()\label{class_it_p_tree_95240af4b79e469ec380c1b54fe817dc}
+
+\begin{CompactList}\small\item\em Return an iterator on the next leaf (exploring the tree from the left to the right). \item\end{CompactList}\item 
+{\bf It\-PTree} {\bf rnext\-Leaf} ()\label{class_it_p_tree_61d94e058defaeb91643a535052bee70}
+
+\begin{CompactList}\small\item\em Return an iterator on the next leaf (exploring the tree from the right to the left). \item\end{CompactList}\item 
+int {\bf length} ()\label{class_it_p_tree_3aebe53355c21edb34cc2e25454a3fcf}
+
+\begin{CompactList}\small\item\em Return the depth from the root node. \item\end{CompactList}\item 
+Measure \& {\bf measure} ()\label{class_it_p_tree_daea7ce1f54bb2a0a396a59760eb395b}
+
+\begin{CompactList}\small\item\em return the measure store in the node adn associated to the set \item\end{CompactList}\item 
+void {\bf measure} (Measure inmeasure)\label{class_it_p_tree_e9b79aec7d04e65744343f3048abc372}
+
+\begin{CompactList}\small\item\em return the measure store in the node adn associated to the set \item\end{CompactList}\item 
+Sets\-Type {\bf element} ()\label{class_it_p_tree_df77aafe855d6c921977ecc2f5388f77}
+
+\begin{CompactList}\small\item\em Function returning the element in the current node. \item\end{CompactList}\item 
+int {\bf element\-Id} ()\label{class_it_p_tree_284b2f920da52b668a18aa6b12f5ec34}
+
+\begin{CompactList}\small\item\em Function returning the internal id of the element in the current node. \item\end{CompactList}\item 
+{\bf Node}$<$ Sets\-Type, Measure $>$ $\ast$ {\bf node} ()\label{class_it_p_tree_5633f67ecb2d18f15f8142a569cf407c}
+
+\begin{CompactList}\small\item\em return a pointer on the current node \item\end{CompactList}\item 
+vector$<$ int $>$ $\ast$ {\bf get\-Internalset} ()\label{class_it_p_tree_c13f15dd60dbc7f8a82214a49b8fc327}
+
+\begin{CompactList}\small\item\em return the current set (with internal ids) from the curent node \item\end{CompactList}\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+vector$<$ int $>$ $\ast$ {\bf internalset}\label{class_it_p_tree_e6950df1aac78bcbe276e58e406fbc08}
+
+\begin{CompactList}\small\item\em used for sets extraction by $\ast$ and -$>$ \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+{\bf Node}$<$ Sets\-Type, Measure $>$ $\ast$ {\bf ptr}\label{class_it_p_tree_9f4c498657335bce50e4336cb775e729}
+
+\begin{CompactList}\small\item\em Current {\bf Node}{\rm (p.\,\pageref{class_node})}. \item\end{CompactList}\item 
+int {\bf internal\-Id}\label{class_it_p_tree_fb87b00832503526833a7d793f582f79}
+
+\begin{CompactList}\small\item\em Internal id (an integer) of the curent element. \item\end{CompactList}\item 
+{\bf Recode\-To\-Int}$<$ Sets\-Type $>$ $\ast$ {\bf recode}\label{class_it_p_tree_b6b3b71b329222db27d080d47bf8039a}
+
+\begin{CompactList}\small\item\em {\bf Recode}{\rm (p.\,\pageref{class_recode})} the elements in integers. \item\end{CompactList}\item 
+int {\bf height}\label{class_it_p_tree_967c7b9bba31e69d9e5acbc40906e3ab}
+
+\begin{CompactList}\small\item\em Number of nodes from the root node. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+class {\bf Node$<$ Sets\-Type, Measure $>$}\label{class_it_p_tree_56b777f68cd8d1ed34d04e1cc4e96041}
+
+\item 
+class {\bf PTree$<$ Sets\-Type, Measure $>$}\label{class_it_p_tree_75985e4c63d08b10230ccb3b9f097182}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Sets\-Type, class Measure = Boolean$>$ class It\-PTree$<$ Sets\-Type, Measure $>$}
+
+Iterator on a {\bf PTree}{\rm (p.\,\pageref{class_p_tree})} (trie data structure). 
+
+The template parameter Sets\-Type is the type of the elements stored in the trie. The template parameter Measure is the type used in the \char`\"{}boolean\char`\"{} vector to code the presence of an element. \begin{Desc}
+\item[See also:]{\bf PTree}{\rm (p.\,\pageref{class_p_tree})}. \end{Desc}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{ItPTree@{It\-PTree}!childNode@{childNode}}
+\index{childNode@{childNode}!ItPTree@{It\-PTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure = Boolean$>$ {\bf It\-PTree} {\bf It\-PTree}$<$ Sets\-Type, Measure $>$::child\-Node (Sets\-Type {\em elem})\hspace{0.3cm}{\tt  [inline]}}\label{class_it_p_tree_91d6a798cefed637033d73de2ec00551}
+
+
+Return an iterator on a child node (of the current node) containing the element elem . 
+
+return the default iterator if there is no child node with the element. \index{ItPTree@{It\-PTree}!getSet@{getSet}}
+\index{getSet@{getSet}!ItPTree@{It\-PTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure$>$ void {\bf It\-PTree}$<$ Sets\-Type, Measure $>$::get\-Set (vector$<$ int $>$ $\ast$ {\em inset}, {\bf It\-PTree}$<$ Sets\-Type, Measure $>$ $\ast$ {\em it})}\label{class_it_p_tree_5cb6cca573fcd5dc61612f1e42089fd0}
+
+
+Get the set (internal id ) stored in the node pointed by the iterator passed in parameter. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em inset}]vector of SIZE it-$>$length where the elements are stored. \item[{\em it}]iterator on the last node storing the last element of the set to extract. \end{description}
+\end{Desc}
+\index{ItPTree@{It\-PTree}!isaLeaf@{isaLeaf}}
+\index{isaLeaf@{isaLeaf}!ItPTree@{It\-PTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure = Boolean$>$ bool {\bf It\-PTree}$<$ Sets\-Type, Measure $>$::isa\-Leaf ()\hspace{0.3cm}{\tt  [inline]}}\label{class_it_p_tree_b47274ccede2e15f5248e94fe19b81e0}
+
+
+Function returning if the iterrator is on a leaf node. 
+
+\begin{Desc}
+\item[Returns:]true if the current node is a leaf node. \end{Desc}
+\index{ItPTree@{It\-PTree}!nextChildNode@{nextChildNode}}
+\index{nextChildNode@{nextChildNode}!ItPTree@{It\-PTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure = Boolean$>$ {\bf It\-PTree} {\bf It\-PTree}$<$ Sets\-Type, Measure $>$::next\-Child\-Node ()\hspace{0.3cm}{\tt  [inline]}}\label{class_it_p_tree_393c897eec99dd8c5aaac7bf76b61733}
+
+
+Return an iterator on the next (wrt order of elements) child node of the current parent node. 
+
+\begin{Desc}
+\item[Returns:]an iterator on the next (wrt order of elements) child node if exists, else return default iterator. \end{Desc}
+\index{ItPTree@{It\-PTree}!parentNode@{parentNode}}
+\index{parentNode@{parentNode}!ItPTree@{It\-PTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure = Boolean$>$ {\bf It\-PTree} {\bf It\-PTree}$<$ Sets\-Type, Measure $>$::parent\-Node ()\hspace{0.3cm}{\tt  [inline]}}\label{class_it_p_tree_00d3bfff31faa63cdca7075c195b3526}
+
+
+Return an iterator on the parent node. 
+
+\begin{Desc}
+\item[Returns:]an iterator on the parent node if exists, else return default iterator. \end{Desc}
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+F:/i\-Zi/data\-Structures/trie/It\-PTree.hxx\end{CompactItemize}

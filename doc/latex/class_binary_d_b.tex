@@ -1,0 +1,105 @@
+\section{Binary\-DB$<$ Sets\-Type, Data\-Struct\-DB $>$ Class Template Reference}
+\label{class_binary_d_b}\index{BinaryDB@{BinaryDB}}
+Binary\-DB\_\-base represents a binary relation, a transactionnal data bases.  
+
+
+{\tt \#include $<$Binary\-DB.hxx$>$}
+
+\subsection*{Public Types}
+\begin{CompactItemize}
+\item 
+typedef {\bf It\-Binary\-DB}$<$ Sets\-Type, Data\-Struct\-DB $>$ {\bf iterator}\label{class_binary_d_b_48c97a6dac76e31fdc0ed035c2bfb29a}
+
+\begin{CompactList}\small\item\em Used to have the same syntax that the STL. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+template$<$class Input\-Format$>$ {\bf Binary\-DB} (Input\-Format \&format, bool inverbose=false)
+\begin{CompactList}\small\item\em Constructor. \item\end{CompactList}\item 
+{\bf $\sim$Binary\-DB} ()\label{class_binary_d_b_f78c593365831c59be0862c601426dc9}
+
+\begin{CompactList}\small\item\em Destructor. \item\end{CompactList}\item 
+template$<$class Container$>$ void {\bf push\_\-back} (Container \&set\-Element, int nb=1)
+\begin{CompactList}\small\item\em Push back a set of element. \item\end{CompactList}\item 
+template$<$class Input\-Iterator$>$ void {\bf push\_\-back} (Input\-Iterator \&first, Input\-Iterator \&last, int nb=1)
+\begin{CompactList}\small\item\em Push back a set of element. \item\end{CompactList}\item 
+void {\bf set\-Recode} ({\bf Recode\-To\-Int}$<$ Sets\-Type $>$ $\ast$inrecode)\label{class_binary_d_b_374b531dec89c19bb50a2c3524c99da3}
+
+\begin{CompactList}\small\item\em Set the recode function in the reconstructed data. \item\end{CompactList}\item 
+{\bf It\-Binary\-DB}$<$ Sets\-Type, Data\-Struct\-DB $>$ {\bf begin} ()\label{class_binary_d_b_5add3a5a8f77c97c19be8a335c62783d}
+
+\begin{CompactList}\small\item\em Return an iterator on the first element stored. \item\end{CompactList}\item 
+{\bf It\-Binary\-DB}$<$ Sets\-Type, Data\-Struct\-DB $>$ {\bf end} ()\label{class_binary_d_b_33e5304e62ebff3fbf72f6088b800a97}
+
+\begin{CompactList}\small\item\em Return an iterator on the element after the last element stored. \item\end{CompactList}\item 
+Data\-Struct\-DB \& {\bf data} ()\label{class_binary_d_b_5fe8c3783aaae5426cddb38e15de7f69}
+
+\begin{CompactList}\small\item\em Return the data. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+vector$<$ vector$<$ Sets\-Type $>$ $>$ $\ast$ {\bf tmp\-DB}\label{class_binary_d_b_9790b745395cb61d823ff9d9f7a2fede}
+
+\begin{CompactList}\small\item\em Container used to store temporarly the transactions. \item\end{CompactList}\item 
+Data\-Struct\-DB {\bf db}\label{class_binary_d_b_537da5448f8c18fd4eb840db2a11c05e}
+
+\begin{CompactList}\small\item\em This container store the transactionnal database with ordered transactions of frequent items. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+class {\bf It\-Binary\-DB$<$ Sets\-Type, Data\-Struct\-DB $>$}\label{class_binary_d_b_2e8afe47ac8168f1f40b08eca702ffbf}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Sets\-Type, class Data\-Struct\-DB = Tatree\_\-base$<$Sets\-Type$>$$>$ class Binary\-DB$<$ Sets\-Type, Data\-Struct\-DB $>$}
+
+Binary\-DB\_\-base represents a binary relation, a transactionnal data bases. 
+
+This class is used to store in memory the transactional database for frequent itemsets mining. By default, the transactions are stored in a trie data structure ({\bf Tatree}{\rm (p.\,\pageref{class_tatree})}). First, the transactions are stored in a temporary data structure (matrix). From this structure, the frequent items are extracted and reordered. After this, the transactions are recontructed (without not frequent items and in increasing oreder of support) and inserted in the final data structure.
+
+The template parameter Sets\-Type is the type of the elements stored in the db. The template parameter Data\-Struct\-DB is a container of sets to store the transactions in memory. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{BinaryDB@{Binary\-DB}!BinaryDB@{BinaryDB}}
+\index{BinaryDB@{BinaryDB}!BinaryDB@{Binary\-DB}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Data\-Struct\-DB = Tatree\_\-base$<$Sets\-Type$>$$>$ template$<$class Input\-Format$>$ {\bf Binary\-DB}$<$ Sets\-Type, Data\-Struct\-DB $>$::{\bf Binary\-DB} (Input\-Format \& {\em format}, bool {\em inverbose} = {\tt false})\hspace{0.3cm}{\tt  [inline]}}\label{class_binary_d_b_c5adea668e389622e005e7b5d0d50236}
+
+
+Constructor. 
+
+The constructor transfer the data from the input stream to a temporay data structure. The template parameter is a stream manipulator that input the data from the db. 
+
+\subsection{Member Function Documentation}
+\index{BinaryDB@{Binary\-DB}!push_back@{push\_\-back}}
+\index{push_back@{push\_\-back}!BinaryDB@{Binary\-DB}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Data\-Struct\-DB = Tatree\_\-base$<$Sets\-Type$>$$>$ template$<$class Input\-Iterator$>$ void {\bf Binary\-DB}$<$ Sets\-Type, Data\-Struct\-DB $>$::push\_\-back (Input\-Iterator \& {\em first}, Input\-Iterator \& {\em last}, int {\em nb} = {\tt 1})\hspace{0.3cm}{\tt  [inline]}}\label{class_binary_d_b_d91fcffa6875b442c3994a2ea51d471a}
+
+
+Push back a set of element. 
+
+This function insert a transaction in the final data structure. With default parameter, the template parameter represents the input iterators on the elements to insert in the data base. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em first}]iterator on the first element \item[{\em last}]iterator on the element after the last \item[{\em nb}]the number of times the set is inserted \end{description}
+\end{Desc}
+\index{BinaryDB@{Binary\-DB}!push_back@{push\_\-back}}
+\index{push_back@{push\_\-back}!BinaryDB@{Binary\-DB}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Data\-Struct\-DB = Tatree\_\-base$<$Sets\-Type$>$$>$ template$<$class Container$>$ void {\bf Binary\-DB}$<$ Sets\-Type, Data\-Struct\-DB $>$::push\_\-back (Container \& {\em set\-Element}, int {\em nb} = {\tt 1})\hspace{0.3cm}{\tt  [inline]}}\label{class_binary_d_b_14ff7dc20fded0c3fddc065318fc2b58}
+
+
+Push back a set of element. 
+
+This function insert a transaction in the final data structure. With default parameter, this function corresponds to the classic {\bf push\_\-back( )}{\rm (p.\,\pageref{class_binary_d_b_14ff7dc20fded0c3fddc065318fc2b58})} function od STL container. The template parameter represents a container of element of type Sets\-Type. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em set\-Element}]the set of element to insert in the trie \item[{\em nb}]the number of times the set is inserted \end{description}
+\end{Desc}
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+F:/i\-Zi/data/memory/Binary\-DB.hxx\end{CompactItemize}

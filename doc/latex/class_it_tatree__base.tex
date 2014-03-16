@@ -1,0 +1,118 @@
+\section{It\-Tatree\_\-base$<$ Sets\-Type $>$ Class Template Reference}
+\label{class_it_tatree__base}\index{ItTatree_base@{ItTatree\_\-base}}
+Iterator on a {\bf Tatree\_\-base}{\rm (p.\,\pageref{class_tatree__base})} (trie data structure).  
+
+
+{\tt \#include $<$It\-Tatree\_\-base.hxx$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf It\-Tatree\_\-base} ({\bf Tatree\_\-base}$<$ Sets\-Type $>$ $\ast$intrie=0)\label{class_it_tatree__base_2d56f24bb02592eb1d548b0ab6af39cb}
+
+\begin{CompactList}\small\item\em Contructor. \item\end{CompactList}\item 
+{\bf It\-Tatree\_\-base} (const {\bf It\-Tatree\_\-base} \&it)\label{class_it_tatree__base_4ccd6aa674f6a9f6a79d11f5e827df82}
+
+\begin{CompactList}\small\item\em Copy contructor. \item\end{CompactList}\item 
+{\bf It\-Tatree\_\-base} \& {\bf operator=} (const {\bf It\-Tatree\_\-base} \&it)\label{class_it_tatree__base_b293a7e6a8ecb1f17dcd2bba5c9f26f2}
+
+\begin{CompactList}\small\item\em Affectation operator. \item\end{CompactList}\item 
+{\bf $\sim$It\-Tatree\_\-base} ()\label{class_it_tatree__base_8c67bf39e9af3d2b8ee7ca3dbd34e1b7}
+
+\begin{CompactList}\small\item\em Destructor. \item\end{CompactList}\item 
+bool {\bf operator==} (const {\bf It\-Tatree\_\-base} \&it) const \label{class_it_tatree__base_1b8b4c04660ce0022167eae953b52b73}
+
+\begin{CompactList}\small\item\em Equality operator. \item\end{CompactList}\item 
+bool {\bf operator!=} (const {\bf It\-Tatree\_\-base} \&it) const \label{class_it_tatree__base_8f73b720ada11494625c5be33f7852d5}
+
+\begin{CompactList}\small\item\em Difference operator. \item\end{CompactList}\item 
+Sets\-Type {\bf element} ()\label{class_it_tatree__base_56bc4c0350976556eb66d305c20283bb}
+
+\begin{CompactList}\small\item\em Function returning the id of the element in the current node. \item\end{CompactList}\item 
+int {\bf element\-Id} ()\label{class_it_tatree__base_44b5064f0430ec6d5e08cc9d4edc9168}
+
+\begin{CompactList}\small\item\em Function returning the internal id of the element in the current node. \item\end{CompactList}\item 
+int {\bf measure} ()\label{class_it_tatree__base_3cb8b5a30e8b7292fa9a789fd06f5a09}
+
+\begin{CompactList}\small\item\em return the measure store in the node associated to the set \item\end{CompactList}\item 
+{\bf It\-Tatree\_\-base} \& {\bf rnext\-Child} ()
+\begin{CompactList}\small\item\em Move the iterator on the previous (wrt order of elements) child node of the current parent node. \item\end{CompactList}\item 
+{\bf It\-Tatree\_\-base} \& {\bf next\-Child} ()
+\begin{CompactList}\small\item\em Move the iterator on the next (wrt order of elements) child node of the current parent node. \item\end{CompactList}\item 
+{\bf It\-Tatree\_\-base} \& {\bf rbegin\-Child\-Node} ()
+\begin{CompactList}\small\item\em Move the iterator on the current node on the first in reverse order child node. \item\end{CompactList}\item 
+{\bf It\-Tatree\_\-base} \& {\bf begin\-Child\-Node} ()
+\begin{CompactList}\small\item\em Move the iterator on the current node on the first child node. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+{\bf Tatree\-Node}$<$ Sets\-Type $>$ $\ast$ {\bf node}\label{class_it_tatree__base_160cdf6cedc88b43a6bd05ad56f768cc}
+
+\begin{CompactList}\small\item\em Pointer on the current node. \item\end{CompactList}\item 
+It\-Map\-TTatree {\bf it\-Elem}\label{class_it_tatree__base_2c03dbde18a7eceb7821084245eca38f}
+
+\begin{CompactList}\small\item\em Iterator on current element. \item\end{CompactList}\item 
+{\bf Tatree\_\-base}$<$ Sets\-Type $>$ $\ast$ {\bf trie}\label{class_it_tatree__base_a441b943cb27a2ecf58c394853213215}
+
+\begin{CompactList}\small\item\em Current trie. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+class {\bf Tatree\_\-base$<$ Sets\-Type $>$}\label{class_it_tatree__base_4d067db2add706706c659a83c3cbcf41}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Sets\-Type$>$ class It\-Tatree\_\-base$<$ Sets\-Type $>$}
+
+Iterator on a {\bf Tatree\_\-base}{\rm (p.\,\pageref{class_tatree__base})} (trie data structure). 
+
+The operations on a {\bf Tatree\_\-base}{\rm (p.\,\pageref{class_tatree__base})} are limited. For example, we cannot directly acces to the transactions by using ++ and $\ast$. The advantage of that type of structure is that it is lighter than one with more operations. Consequently code dedicated to such class will be more efficient.
+
+The template parameter Sets\-Type is the type of the element stored in the trie. The template parameter Container is the container use to store the set of elements. 
+
+
+
+\subsection{Member Function Documentation}
+\index{ItTatree_base@{It\-Tatree\_\-base}!beginChildNode@{beginChildNode}}
+\index{beginChildNode@{beginChildNode}!ItTatree_base@{It\-Tatree\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type$>$ {\bf It\-Tatree\_\-base}\& {\bf It\-Tatree\_\-base}$<$ Sets\-Type $>$::begin\-Child\-Node ()\hspace{0.3cm}{\tt  [inline]}}\label{class_it_tatree__base_1f220df0efabdc43af17b18b676ff72e}
+
+
+Move the iterator on the current node on the first child node. 
+
+\begin{Desc}
+\item[Returns:]the iterator on the child node. \end{Desc}
+\index{ItTatree_base@{It\-Tatree\_\-base}!nextChild@{nextChild}}
+\index{nextChild@{nextChild}!ItTatree_base@{It\-Tatree\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type$>$ {\bf It\-Tatree\_\-base}\& {\bf It\-Tatree\_\-base}$<$ Sets\-Type $>$::next\-Child ()\hspace{0.3cm}{\tt  [inline]}}\label{class_it_tatree__base_5b89e54c0ffe5036b41f32842e4eb8b7}
+
+
+Move the iterator on the next (wrt order of elements) child node of the current parent node. 
+
+If the current node is the root node return the end iterator. For efficiency reason the returne iterator does not contain the underlying set stored from the node. \begin{Desc}
+\item[Returns:]an iterator on the next (wrt order of elements) child node if exists, else return default iterator. \end{Desc}
+\index{ItTatree_base@{It\-Tatree\_\-base}!rbeginChildNode@{rbeginChildNode}}
+\index{rbeginChildNode@{rbeginChildNode}!ItTatree_base@{It\-Tatree\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type$>$ {\bf It\-Tatree\_\-base}\& {\bf It\-Tatree\_\-base}$<$ Sets\-Type $>$::rbegin\-Child\-Node ()\hspace{0.3cm}{\tt  [inline]}}\label{class_it_tatree__base_fb3bdc6147396c842dcedc385dc93f73}
+
+
+Move the iterator on the current node on the first in reverse order child node. 
+
+\begin{Desc}
+\item[Returns:]the iterator on the child node. \end{Desc}
+\index{ItTatree_base@{It\-Tatree\_\-base}!rnextChild@{rnextChild}}
+\index{rnextChild@{rnextChild}!ItTatree_base@{It\-Tatree\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type$>$ {\bf It\-Tatree\_\-base}\& {\bf It\-Tatree\_\-base}$<$ Sets\-Type $>$::rnext\-Child ()\hspace{0.3cm}{\tt  [inline]}}\label{class_it_tatree__base_f0ac7e5e53428400220df060dbcdd66a}
+
+
+Move the iterator on the previous (wrt order of elements) child node of the current parent node. 
+
+If the current node is the root node return the end iterator. For efficiency reason the returne iterator does not contain the underlying set stored from the node. \begin{Desc}
+\item[Returns:]an iterator on the previous (wrt order of elements) child node if exists, else return default iterator. \end{Desc}
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+F:/i\-Zi/data\-Structures/trie/It\-Tatree\_\-base.hxx\end{CompactItemize}

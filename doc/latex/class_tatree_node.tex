@@ -1,0 +1,101 @@
+\section{Tatree\-Node$<$ Sets\-Type $>$ Class Template Reference}
+\label{class_tatree_node}\index{TatreeNode@{TatreeNode}}
+Template class representing a node of a trie data structure.  
+
+
+{\tt \#include $<$Tatree\-Node.hxx$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf Tatree\-Node} (int incnt=0)\label{class_tatree_node_c1d3bb5eb337c148e101f300efa0719d}
+
+\begin{CompactList}\small\item\em Constructor. \item\end{CompactList}\item 
+{\bf $\sim$Tatree\-Node} ()\label{class_tatree_node_f6971420a5eedc158eafbfca2115cb17}
+
+\begin{CompactList}\small\item\em Destructor. \item\end{CompactList}\item 
+template$<$class Container$>$ void {\bf push\_\-back} (Container \&set\-Element, int nb=0)
+\begin{CompactList}\small\item\em Push back a set of element from this node. \item\end{CompactList}\item 
+template$<$class Input\-Iterator$>$ void {\bf push\_\-back} (Input\-Iterator \&first, Input\-Iterator \&last, int nb=0)
+\begin{CompactList}\small\item\em Push back a set of element from this node. \item\end{CompactList}\item 
+int {\bf number} ()\label{class_tatree_node_09aa679da0752a8f7881fb1d43e492af}
+
+\begin{CompactList}\small\item\em Return the number of occurence of the set stored in the previous nodes. \item\end{CompactList}\item 
+map\-TTatree \& {\bf childs} ()\label{class_tatree_node_77117d3078d2d307be2e7ef7e3bdc939}
+
+\begin{CompactList}\small\item\em Return the nodes and their child nodes. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+int {\bf cnt}\label{class_tatree_node_b0d8de188c9e2935d0983836de4f24f0}
+
+\begin{CompactList}\small\item\em Numbers of sets stored in the previous nodes. \item\end{CompactList}\item 
+int {\bf max}\label{class_tatree_node_5601ac158f5ef263bf987361dabce640}
+
+\begin{CompactList}\small\item\em Size of the largest set. \item\end{CompactList}\item 
+map\-TTatree {\bf items}\label{class_tatree_node_c164a7fff2a31d23da5305aa85c8c6eb}
+
+\begin{CompactList}\small\item\em Items in the node and corresponding childs nodes. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+class {\bf It\-Tatree\_\-base$<$ Sets\-Type $>$}\label{class_tatree_node_1ce67181fc35f375e5115a7dfb1f0b3c}
+
+\item 
+class {\bf Tatree\_\-base$<$ Sets\-Type $>$}\label{class_tatree_node_4d067db2add706706c659a83c3cbcf41}
+
+\item 
+class {\bf It\-Tatree$<$ Sets\-Type $>$}\label{class_tatree_node_e63ac7816d95fec5ec77b16c2597e4b7}
+
+\item 
+class {\bf Tatree$<$ Sets\-Type $>$}\label{class_tatree_node_d092d4c79b0d187f36b3f75573889423}
+
+\end{CompactItemize}
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+class {\bf insert\-Node}
+\begin{CompactList}\small\item\em functor used to add an element in a node \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Sets\-Type$>$ class Tatree\-Node$<$ Sets\-Type $>$}
+
+Template class representing a node of a trie data structure. 
+
+This class represents a node of a trie data structure storing sets of values. The element in the node are stored in lexicographic order.
+
+The template parameter is the type of the element stored in the trie. 
+
+
+
+\subsection{Member Function Documentation}
+\index{TatreeNode@{Tatree\-Node}!push_back@{push\_\-back}}
+\index{push_back@{push\_\-back}!TatreeNode@{Tatree\-Node}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type$>$ template$<$class Input\-Iterator$>$ void {\bf Tatree\-Node}$<$ Sets\-Type $>$::push\_\-back (Input\-Iterator \& {\em first}, Input\-Iterator \& {\em last}, int {\em nb} = {\tt 0})\hspace{0.3cm}{\tt  [inline]}}\label{class_tatree_node_b54221d3b995b8d20098f0e7325e1f79}
+
+
+Push back a set of element from this node. 
+
+The template parameter represents the input iterators on the elements to insert. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em first}]iterator on the first element \item[{\em last}]iterator on the element after the last \item[{\em nb}]the number of times the set is inserted \end{description}
+\end{Desc}
+\index{TatreeNode@{Tatree\-Node}!push_back@{push\_\-back}}
+\index{push_back@{push\_\-back}!TatreeNode@{Tatree\-Node}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type$>$ template$<$class Container$>$ void {\bf Tatree\-Node}$<$ Sets\-Type $>$::push\_\-back (Container \& {\em set\-Element}, int {\em nb} = {\tt 0})\hspace{0.3cm}{\tt  [inline]}}\label{class_tatree_node_b8ab38f4a513579212225b8a5bf647f9}
+
+
+Push back a set of element from this node. 
+
+This function corresponds to the classic {\bf push\_\-back( )}{\rm (p.\,\pageref{class_tatree_node_b8ab38f4a513579212225b8a5bf647f9})} function od STL container. The template parameter represents a container of element of type Sets\-Type. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em set\-Element}]the set of element to insert. \item[{\em nb}]the number of times the set is inserted. \end{description}
+\end{Desc}
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+F:/i\-Zi/data\-Structures/trie/Tatree\-Node.hxx\end{CompactItemize}

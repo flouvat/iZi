@@ -1,0 +1,75 @@
+\section{Recode$<$ Data\-Type, Internal\-Type $>$ Class Template Reference}
+\label{class_recode}\index{Recode@{Recode}}
+Mother abstract class to recode elements of type Data\-Type to type Internal\-Type.  
+
+
+{\tt \#include $<$Recode.hxx$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf Recode} ()\label{class_recode_9a4d8568ab77ad30030b91492355e776}
+
+\begin{CompactList}\small\item\em Constructor. \item\end{CompactList}\item 
+virtual {\bf $\sim$Recode} ()\label{class_recode_47d4f7b6266ac0ae568551ca6d3b6785}
+
+\begin{CompactList}\small\item\em Destructor. \item\end{CompactList}\item 
+map$<$ Data\-Type, Internal\-Type $>$ $\ast$ {\bf get\-Id\-Tointernid} ()\label{class_recode_d9f47604af61deddd790e82658442882}
+
+\begin{CompactList}\small\item\em Return the object that transforms elements into internal id. \item\end{CompactList}\item 
+map$<$ Internal\-Type, Data\-Type $>$ $\ast$ {\bf get\-Internid\-Toid} ()\label{class_recode_9ab4c3ab3202b1bf6b22887de9427ee7}
+
+\begin{CompactList}\small\item\em Return the object that transforms internal id into original elements. \item\end{CompactList}\item 
+template$<$class Container$>$ vector$<$ Internal\-Type $>$ \& {\bf operator()} (Container \&itemset)
+\begin{CompactList}\small\item\em Map a set of elements of the input data in internals ids. \item\end{CompactList}\item 
+virtual Internal\-Type {\bf operator()} (Data\-Type item)=0
+\begin{CompactList}\small\item\em Map an element of the input data in an internal id. \item\end{CompactList}\item 
+int {\bf size} ()\label{class_recode_c551bb104645514d89da76a08c760fcb}
+
+\begin{CompactList}\small\item\em Return the number of elements recoded. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+map$<$ Data\-Type, Internal\-Type $>$ {\bf id\-Tointernid}\label{class_recode_8b20ffccdf7b8c5e01f096ed7a7f0769}
+
+\begin{CompactList}\small\item\em Map the original id with the internal id. \item\end{CompactList}\item 
+map$<$ Internal\-Type, Data\-Type $>$ {\bf internid\-Toid}\label{class_recode_f2e010c315a3b441f9e21b1b91264c55}
+
+\begin{CompactList}\small\item\em Map the internal id with the original id. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Data\-Type, class Internal\-Type$>$ class Recode$<$ Data\-Type, Internal\-Type $>$}
+
+Mother abstract class to recode elements of type Data\-Type to type Internal\-Type. 
+
+
+
+\subsection{Member Function Documentation}
+\index{Recode@{Recode}!operator()@{operator()}}
+\index{operator()@{operator()}!Recode@{Recode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Data\-Type, class Internal\-Type$>$ virtual Internal\-Type {\bf Recode}$<$ Data\-Type, Internal\-Type $>$::operator() (Data\-Type {\em item})\hspace{0.3cm}{\tt  [pure virtual]}}\label{class_recode_266e8a09b4576e02aab3cd6590a9ffbf}
+
+
+Map an element of the input data in an internal id. 
+
+\begin{Desc}
+\item[Returns:]the new id. \end{Desc}
+
+
+Implemented in {\bf Recode\-To\-Int$<$ Data\-Type $>$} {\rm (p.\,\pageref{class_recode_to_int_84e738bd2a7faf92a7d916e995689cab})}.\index{Recode@{Recode}!operator()@{operator()}}
+\index{operator()@{operator()}!Recode@{Recode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Data\-Type, class Internal\-Type$>$ template$<$class Container$>$ vector$<$Internal\-Type$>$\& {\bf Recode}$<$ Data\-Type, Internal\-Type $>$::operator() (Container \& {\em itemset})\hspace{0.3cm}{\tt  [inline]}}\label{class_recode_d4fc62868c9f2097c762a6e0c66ae685}
+
+
+Map a set of elements of the input data in internals ids. 
+
+\begin{Desc}
+\item[Returns:]the recoded set. \end{Desc}
+
+
+Reimplemented in {\bf Recode\-To\-Int$<$ Data\-Type $>$} {\rm (p.\,\pageref{class_recode_to_int_7d3d3ea423abd8e055ba4483744fba04})}, {\bf Recode\-To\-Int$<$ Attribute\-Type $>$} {\rm (p.\,\pageref{class_recode_to_int_7d3d3ea423abd8e055ba4483744fba04})}, {\bf Recode\-To\-Int$<$ int $>$} {\rm (p.\,\pageref{class_recode_to_int_7d3d3ea423abd8e055ba4483744fba04})}, {\bf Recode\-To\-Int$<$ string $>$} {\rm (p.\,\pageref{class_recode_to_int_7d3d3ea423abd8e055ba4483744fba04})}, and {\bf Recode\-To\-Int$<$ Sets\-Type $>$} {\rm (p.\,\pageref{class_recode_to_int_7d3d3ea423abd8e055ba4483744fba04})}.
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+F:/i\-Zi/util/Recode.hxx\end{CompactItemize}

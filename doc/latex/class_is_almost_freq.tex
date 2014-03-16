@@ -1,0 +1,51 @@
+\section{Is\-Almost\-Freq Class Reference}
+\label{class_is_almost_freq}\index{IsAlmostFreq@{IsAlmostFreq}}
+Determine if a not frequent itemset is near the positive border in the ABS algorithm.  
+
+
+{\tt \#include $<$Is\-Almost\-Freq.hxx$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf Is\-Almost\-Freq} (int inminsup, double inepsilon)\label{class_is_almost_freq_7103fd70890d938354573f4daec7e0ec}
+
+\begin{CompactList}\small\item\em Constructor. \item\end{CompactList}\item 
+template$<$class Iterator$>$ bool {\bf operator()} (Iterator it\-Elem)
+\begin{CompactList}\small\item\em Determine if a not frequent itemset is \char`\"{}near\char`\"{} the positive border. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+double {\bf epsilon}\label{class_is_almost_freq_b6f988eaf3645c85e54dfc34e7461e64}
+
+\begin{CompactList}\small\item\em threshold used to determine when an element is \char`\"{}near\char`\"{} the positive border \item\end{CompactList}\item 
+int {\bf minsup}\label{class_is_almost_freq_94fe99251edd3b41cb4d1c6a231bd452}
+
+\begin{CompactList}\small\item\em Minimum support thresold. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Determine if a not frequent itemset is near the positive border in the ABS algorithm. 
+
+In ABS, elements near the positive border are considered as frequent until the end of algorithm. The these \char`\"{}almost frequent\char`\"{} elements are used to find the underling elements of the positive border. 
+
+
+
+\subsection{Member Function Documentation}
+\index{IsAlmostFreq@{Is\-Almost\-Freq}!operator()@{operator()}}
+\index{operator()@{operator()}!IsAlmostFreq@{Is\-Almost\-Freq}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Iterator$>$ bool Is\-Almost\-Freq::operator() (Iterator {\em it\-Elem})\hspace{0.3cm}{\tt  [inline]}}\label{class_is_almost_freq_aed551b7b0b631e981fbecb0090aa170}
+
+
+Determine if a not frequent itemset is \char`\"{}near\char`\"{} the positive border. 
+
+A not frequent element X is \char`\"{}near\char`\"{}, if (1 - supp( X ) /minsup $<$ thresold \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em it\-Element}]iterator on the element to study \end{description}
+\end{Desc}
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+F:/i\-Zi/problems/frequent/Is\-Almost\-Freq.hxx\end{CompactItemize}

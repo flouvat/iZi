@@ -1,0 +1,103 @@
+\section{It\-Binary\-DB$<$ Sets\-Type, Data\-Struct\-DB, Container $>$ Class Template Reference}
+\label{class_it_binary_d_b}\index{ItBinaryDB@{ItBinaryDB}}
+Iterator on a {\bf Binary\-DB}{\rm (p.\,\pageref{class_binary_d_b})}.  
+
+
+{\tt \#include $<$It\-Binary\-DB.hxx$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf It\-Binary\-DB} ({\bf Binary\-DB}$<$ Sets\-Type, Data\-Struct\-DB $>$ $\ast$indb=0)
+\begin{CompactList}\small\item\em Contructor. \item\end{CompactList}\item 
+{\bf It\-Binary\-DB} (const {\bf It\-Binary\-DB} \&it)\label{class_it_binary_d_b_61f089507fe6f0a87faf85b1998f2be7}
+
+\begin{CompactList}\small\item\em Copy contructor. \item\end{CompactList}\item 
+{\bf It\-Binary\-DB} \& {\bf operator=} (const {\bf It\-Binary\-DB} \&it)\label{class_it_binary_d_b_1e9d36966f7fb7419e1902664eace7c9}
+
+\begin{CompactList}\small\item\em Affectation operator. \item\end{CompactList}\item 
+{\bf $\sim$It\-Binary\-DB} ()\label{class_it_binary_d_b_cad2c6eb1c50686997e3b2946f082243}
+
+\begin{CompactList}\small\item\em Destructor. \item\end{CompactList}\item 
+{\bf It\-Binary\-DB} \& {\bf operator++} ()
+\begin{CompactList}\small\item\em Increment operator. \item\end{CompactList}\item 
+{\bf It\-Binary\-DB} {\bf operator++} (int)
+\begin{CompactList}\small\item\em Increment operator. \item\end{CompactList}\item 
+Container \& {\bf operator $\ast$} ()\label{class_it_binary_d_b_c117c52f125ee39ef6031829ad79f79b}
+
+\begin{CompactList}\small\item\em Operator returning the transaction pointed by the current iterator. \item\end{CompactList}\item 
+Container $\ast$ {\bf operator $\rightarrow$ } ()\label{class_it_binary_d_b_1894f39ef8dff3081bfa42605fc128c1}
+
+\begin{CompactList}\small\item\em Operator returning a pointer on the transaction pointed by the current iterator. \item\end{CompactList}\item 
+bool {\bf operator==} (const {\bf It\-Binary\-DB} \&it) const \label{class_it_binary_d_b_91eafdf30203a18baf6d392a38f96b0d}
+
+\begin{CompactList}\small\item\em Equality operator. \item\end{CompactList}\item 
+bool {\bf operator!=} (const {\bf It\-Binary\-DB} \&it) const \label{class_it_binary_d_b_941afddd8f5ef0c8e0ef9370c2d85035}
+
+\begin{CompactList}\small\item\em Difference operator. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+Iterator\-Data\-Struct {\bf current\-It}\label{class_it_binary_d_b_5885f783eeca530fa2f5d8f4ca772e7c}
+
+\begin{CompactList}\small\item\em Iterator on the current transaction. \item\end{CompactList}\item 
+It\-Vect\-Vect $\ast$ {\bf i\-Ttmp\-DB}\label{class_it_binary_d_b_768d3ac84d56e4c06c9d8aa72384dfd8}
+
+\begin{CompactList}\small\item\em Iterator on the temporary db. \item\end{CompactList}\item 
+Iterator\-Data\-Struct {\bf end\-It}\label{class_it_binary_d_b_5444ed214330550b28da30032caa76d4}
+
+\begin{CompactList}\small\item\em Iterator on the end of thetransaction. \item\end{CompactList}\item 
+It\-Vect\-Vect $\ast$ {\bf end\-It\-Tmp}\label{class_it_binary_d_b_99d05794ac53f0479a1dacd03dd74fc0}
+
+\begin{CompactList}\small\item\em Iterator on the end of the temporary db. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+class {\bf Binary\-DB$<$ Sets\-Type, Data\-Struct\-DB $>$}\label{class_it_binary_d_b_040243f5590d2e87774acbc72e24382d}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Sets\-Type, class Data\-Struct\-DB, class Container = vector$<$Sets\-Type$>$$>$ class It\-Binary\-DB$<$ Sets\-Type, Data\-Struct\-DB, Container $>$}
+
+Iterator on a {\bf Binary\-DB}{\rm (p.\,\pageref{class_binary_d_b})}. 
+
+The template parameter Sets\-Type is the type of the element stored in the db. The template parameter Data\-Struct\-DB is the type of the data structure storing the db. The template parameter Container is the container used to store the transactions.
+
+\begin{Desc}
+\item[See also:]{\bf Binary\-DB}{\rm (p.\,\pageref{class_binary_d_b})}. \end{Desc}
+
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ItBinaryDB@{It\-Binary\-DB}!ItBinaryDB@{ItBinaryDB}}
+\index{ItBinaryDB@{ItBinaryDB}!ItBinaryDB@{It\-Binary\-DB}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Data\-Struct\-DB, class Container = vector$<$Sets\-Type$>$$>$ {\bf It\-Binary\-DB}$<$ Sets\-Type, Data\-Struct\-DB, Container $>$::{\bf It\-Binary\-DB} ({\bf Binary\-DB}$<$ Sets\-Type, Data\-Struct\-DB $>$ $\ast$ {\em indb} = {\tt 0})\hspace{0.3cm}{\tt  [inline]}}\label{class_it_binary_d_b_79ec8ddfa713a15b83ed1ee55de9a4cb}
+
+
+Contructor. 
+
+Initialize the iterators on the db or in the temporary db if the final does not exist. 
+
+\subsection{Member Function Documentation}
+\index{ItBinaryDB@{It\-Binary\-DB}!operator++@{operator++}}
+\index{operator++@{operator++}!ItBinaryDB@{It\-Binary\-DB}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Data\-Struct\-DB, class Container = vector$<$Sets\-Type$>$$>$ {\bf It\-Binary\-DB} {\bf It\-Binary\-DB}$<$ Sets\-Type, Data\-Struct\-DB, Container $>$::operator++ (int)\hspace{0.3cm}{\tt  [inline]}}\label{class_it_binary_d_b_85521883adc83343d2e3b0ce82ef1adc}
+
+
+Increment operator. 
+
+get the next set stored. \index{ItBinaryDB@{It\-Binary\-DB}!operator++@{operator++}}
+\index{operator++@{operator++}!ItBinaryDB@{It\-Binary\-DB}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Data\-Struct\-DB, class Container = vector$<$Sets\-Type$>$$>$ {\bf It\-Binary\-DB}\& {\bf It\-Binary\-DB}$<$ Sets\-Type, Data\-Struct\-DB, Container $>$::operator++ ()\hspace{0.3cm}{\tt  [inline]}}\label{class_it_binary_d_b_b3ebf157e20f4fc8a4fca5172e469210}
+
+
+Increment operator. 
+
+get the next set stored. 
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+F:/i\-Zi/data/memory/It\-Binary\-DB.hxx\end{CompactItemize}

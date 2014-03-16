@@ -1,0 +1,49 @@
+\section{Init\-Frequent$<$ Sets\-Type, Binary\-DB, Predicate $>$ Class Template Reference}
+\label{class_init_frequent}\index{InitFrequent@{InitFrequent}}
+Functor used to initialize the frequent items.  
+
+
+{\tt \#include $<$Init\-Frequent.hxx$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf Init\-Frequent} ({\bf Binary\-DB} \&indb, {\bf Predicate} \&inpred)\label{class_init_frequent_686b379a23f75c8e1df5c8702d462683}
+
+\begin{CompactList}\small\item\em Constructor. \item\end{CompactList}\item 
+void {\bf operator()} ()\label{class_init_frequent_8f248a5ae7603efb1b9bc52ff7323bbd}
+
+\begin{CompactList}\small\item\em Operator excuting this initialization function in the algorithm. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+deque$<$ Sets\-Type $>$ {\bf list\-Elements}\label{class_init_frequent_7bbf538d239ba565980cd201b7b5f08a}
+
+\begin{CompactList}\small\item\em List of the items. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+{\bf Binary\-DB} $\ast$ {\bf db}\label{class_init_frequent_86b635685b8d2a731805f276541a0985}
+
+\begin{CompactList}\small\item\em The database. \item\end{CompactList}\item 
+{\bf Predicate} $\ast$ {\bf pred}\label{class_init_frequent_5e3ffe3b474496e68eea25682e1f7f0b}
+
+\begin{CompactList}\small\item\em The predicate. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Sets\-Type, class Binary\-DB, class Predicate$>$ class Init\-Frequent$<$ Sets\-Type, Binary\-DB, Predicate $>$}
+
+Functor used to initialize the frequent items. 
+
+This functor is used to search the items in the database with their support. It is passed in parameter of the algorithms and execute int the algorithm.
+
+The predicate is used in this class to store the items with their support.
+
+The template parameter Sets\-Type is the type of the items. The template parameter {\bf Binary\-DB}{\rm (p.\,\pageref{class_binary_d_b})} is the type of the transactional database. The template parameter {\bf Predicate}{\rm (p.\,\pageref{class_predicate})} is the type of the predicate used to select interesting items. 
+
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+F:/i\-Zi/problems/frequent/Init\-Frequent.hxx\end{CompactItemize}

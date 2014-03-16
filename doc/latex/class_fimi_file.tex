@@ -1,0 +1,221 @@
+\section{Fimi\-File$<$ Sets\-Type $>$ Class Template Reference}
+\label{class_fimi_file}\index{FimiFile@{FimiFile}}
+Class used to read a transactionnal db in the FIMI format and save data in the FIMI format.  
+
+
+{\tt \#include $<$Fimi\-File.hxx$>$}
+
+\subsection*{Public Types}
+\begin{CompactItemize}
+\item 
+typedef {\bf It\-Fimi\-File}$<$ Sets\-Type $>$ {\bf iterator}\label{class_fimi_file_31e6c824ac439296b7aa5701d07d81f5}
+
+\begin{CompactList}\small\item\em Used to have the same syntax tha the STL. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf Fimi\-File} (const char $\ast$in\-File\-Name)\label{class_fimi_file_0698069b454374417db777ad6f4cfcfb}
+
+\begin{CompactList}\small\item\em Constructor. \item\end{CompactList}\item 
+virtual {\bf $\sim$Fimi\-File} ()
+\begin{CompactList}\small\item\em Destructor. \item\end{CompactList}\item 
+template$<$class Container\-DB$>$ {\bf Fimi\-File} \& {\bf operator$>$$>$} (Container\-DB \&container)
+\begin{CompactList}\small\item\em Extract data of the file and insert it in a container. \item\end{CompactList}\item 
+template$<$class Container\-Bd\-T$>$ {\bf Fimi\-File} \& {\bf operator$<$$<$} (Container\-Bd\-T \&container)
+\begin{CompactList}\small\item\em Extract all the data of the container and insert it in a file . \item\end{CompactList}\item 
+template$<$class Container, class Val$>$ void {\bf push\_\-back} (Container \&set\-Element, Val supp)
+\begin{CompactList}\small\item\em Insert an itemset in the file. \item\end{CompactList}\item 
+template$<$class Container$>$ void {\bf push\_\-back} (Container \&set\-Element)
+\begin{CompactList}\small\item\em Insert an itemset in the file. \item\end{CompactList}\item 
+template$<$class Input\-Iterator, class Val$>$ void {\bf push\_\-back} (Input\-Iterator first, Input\-Iterator last, Val supp)
+\begin{CompactList}\small\item\em Insert a set of element in the file. \item\end{CompactList}\item 
+{\bf It\-Fimi\-File}$<$ Sets\-Type $>$ {\bf begin} ()\label{class_fimi_file_805ab6183fa800eddda7f8f1a72094e0}
+
+\begin{CompactList}\small\item\em Return an iterator on the first element stored. \item\end{CompactList}\item 
+{\bf It\-Fimi\-File}$<$ Sets\-Type $>$ {\bf end} ()\label{class_fimi_file_40d4c8c8d693bdb4b93ba601928e15d7}
+
+\begin{CompactList}\small\item\em Return an iterator on the element after the last element stored. \item\end{CompactList}\item 
+void {\bf close} ()\label{class_fimi_file_d4bb3dfd03745838c7a232e001a1eb7a}
+
+\begin{CompactList}\small\item\em Close the file. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Member Functions}
+\begin{CompactItemize}
+\item 
+bool {\bf read\-Line} (vector$<$ int $>$ \&line)
+\begin{CompactList}\small\item\em Function reading a line of integer in the file. \item\end{CompactList}\item 
+template$<$class Container$>$ bool {\bf read\-Line} (Container \&line)
+\begin{CompactList}\small\item\em Function reading a line in the file. \item\end{CompactList}\item 
+template$<$class Container\-DB$>$ bool {\bf read} (Container\-DB \&container)
+\begin{CompactList}\small\item\em Function reading all the data in the file and store it in a container. \item\end{CompactList}\item 
+template$<$class Iterator, class Val$>$ void {\bf write} (Iterator begin, Iterator end, Val measure)
+\begin{CompactList}\small\item\em Function write data in a file. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+const char $\ast$ {\bf file\-Name}\label{class_fimi_file_798e7dd3a0fb30f74d14d371b380329d}
+
+\begin{CompactList}\small\item\em name of the file to used \item\end{CompactList}\item 
+ifstream {\bf readfile}\label{class_fimi_file_6e6ce86565764314471aaf478639fd2c}
+
+\begin{CompactList}\small\item\em Stream used to read in the file. \item\end{CompactList}\item 
+ofstream {\bf writefile}\label{class_fimi_file_c3caf86aea00e29476a21d1285fd7c77}
+
+\begin{CompactList}\small\item\em Stream used to write in the file. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+class {\bf It\-Fimi\-File$<$ Sets\-Type $>$}\label{class_fimi_file_8a239185a8893ca8f127ab8909bb9ee7}
+
+\end{CompactItemize}
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+class {\bf save\-Container\-In\-File}
+\begin{CompactList}\small\item\em Functor used to save in the file each set. \item\end{CompactList}\item 
+class {\bf save\-Elem\-In\-File}
+\begin{CompactList}\small\item\em Functor used to save in the file each element of a set. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Sets\-Type = int$>$ class Fimi\-File$<$ Sets\-Type $>$}
+
+Class used to read a transactionnal db in the FIMI format and save data in the FIMI format. 
+
+This class is implemented uidung the stream classes of the iostream library. Consequently, it is less efficient thant the correspondig C class. The template parameter Sets\-Type is the type of items in the transactions. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{FimiFile@{Fimi\-File}!~FimiFile@{$\sim$FimiFile}}
+\index{~FimiFile@{$\sim$FimiFile}!FimiFile@{Fimi\-File}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type = int$>$ virtual {\bf Fimi\-File}$<$ Sets\-Type $>$::$\sim${\bf Fimi\-File} ()\hspace{0.3cm}{\tt  [inline, virtual]}}\label{class_fimi_file_755603ee01f5dbb89246a62211bdd63f}
+
+
+Destructor. 
+
+The destructor close the file. 
+
+\subsection{Member Function Documentation}
+\index{FimiFile@{Fimi\-File}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!FimiFile@{Fimi\-File}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type = int$>$ template$<$class Container\-Bd\-T$>$ {\bf Fimi\-File}\& {\bf Fimi\-File}$<$ Sets\-Type $>$::operator$<$$<$ (Container\-Bd\-T \& {\em container})\hspace{0.3cm}{\tt  [inline]}}\label{class_fimi_file_79e4b235b956e9a1965176be3672a6ce}
+
+
+Extract all the data of the container and insert it in a file . 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em container}]where the data is read. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]$\ast$this. \end{Desc}
+\index{FimiFile@{Fimi\-File}!operator>>@{operator$>$$>$}}
+\index{operator>>@{operator$>$$>$}!FimiFile@{Fimi\-File}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type = int$>$ template$<$class Container\-DB$>$ {\bf Fimi\-File}\& {\bf Fimi\-File}$<$ Sets\-Type $>$::operator$>$$>$ (Container\-DB \& {\em container})\hspace{0.3cm}{\tt  [inline]}}\label{class_fimi_file_3d7feafbe9c9e71df3fda3e9514ebdef}
+
+
+Extract data of the file and insert it in a container. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em container}]where the data read is inserted (must have a push\_\-back function). \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]$\ast$this. \end{Desc}
+\index{FimiFile@{Fimi\-File}!push_back@{push\_\-back}}
+\index{push_back@{push\_\-back}!FimiFile@{Fimi\-File}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type = int$>$ template$<$class Input\-Iterator, class Val$>$ void {\bf Fimi\-File}$<$ Sets\-Type $>$::push\_\-back (Input\-Iterator {\em first}, Input\-Iterator {\em last}, Val {\em supp})\hspace{0.3cm}{\tt  [inline]}}\label{class_fimi_file_c01fb0d5fcf07c991fe85ca12ecd7a02}
+
+
+Insert a set of element in the file. 
+
+The template parameter represents the input iterators on the integers to insert in the file. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em first}]iterator on the first element. \item[{\em last}]iterator on the element after the last. \item[{\em supp}]the support of the itemset. \end{description}
+\end{Desc}
+\index{FimiFile@{Fimi\-File}!push_back@{push\_\-back}}
+\index{push_back@{push\_\-back}!FimiFile@{Fimi\-File}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type = int$>$ template$<$class Container$>$ void {\bf Fimi\-File}$<$ Sets\-Type $>$::push\_\-back (Container \& {\em set\-Element})\hspace{0.3cm}{\tt  [inline]}}\label{class_fimi_file_dae7226e9737797a445300151a5dd907}
+
+
+Insert an itemset in the file. 
+
+This function corresponds to the classic {\bf push\_\-back( )}{\rm (p.\,\pageref{class_fimi_file_72dce2f4bf0815c28fe52c951e51a1e0})} function od STL container. The template parameter represents a container of integers. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em set\-Element}]the set of element to insert in the file. \item[{\em supp}]the support of the itemset. \end{description}
+\end{Desc}
+\index{FimiFile@{Fimi\-File}!push_back@{push\_\-back}}
+\index{push_back@{push\_\-back}!FimiFile@{Fimi\-File}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type = int$>$ template$<$class Container, class Val$>$ void {\bf Fimi\-File}$<$ Sets\-Type $>$::push\_\-back (Container \& {\em set\-Element}, Val {\em supp})\hspace{0.3cm}{\tt  [inline]}}\label{class_fimi_file_72dce2f4bf0815c28fe52c951e51a1e0}
+
+
+Insert an itemset in the file. 
+
+This function corresponds to the classic {\bf push\_\-back( )}{\rm (p.\,\pageref{class_fimi_file_72dce2f4bf0815c28fe52c951e51a1e0})} function od STL container. The template parameter represents a container of integers. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em set\-Element}]the set of element to insert in the file. \item[{\em supp}]the support of the itemset. \end{description}
+\end{Desc}
+\index{FimiFile@{Fimi\-File}!read@{read}}
+\index{read@{read}!FimiFile@{Fimi\-File}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type$>$ template$<$class Container\-DB$>$ bool {\bf Fimi\-File}$<$ Sets\-Type $>$::read (Container\-DB \& {\em container})\hspace{0.3cm}{\tt  [protected]}}\label{class_fimi_file_841b304183b3c6d45b7cd1eae3c3497e}
+
+
+Function reading all the data in the file and store it in a container. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em container}]class representing the relation (must have a push\_\-back function). \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]true if data has been read. \end{Desc}
+\index{FimiFile@{Fimi\-File}!readLine@{readLine}}
+\index{readLine@{readLine}!FimiFile@{Fimi\-File}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type$>$ template$<$class Container$>$ bool {\bf Fimi\-File}$<$ Sets\-Type $>$::read\-Line (Container \& {\em line})\hspace{0.3cm}{\tt  [protected]}}\label{class_fimi_file_64466eb74b18b382f35c2ca4a939b0f9}
+
+
+Function reading a line in the file. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em line}]stores the line (must have a push\_\-back function). \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]false if end of file \end{Desc}
+\index{FimiFile@{Fimi\-File}!readLine@{readLine}}
+\index{readLine@{readLine}!FimiFile@{Fimi\-File}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type$>$ bool {\bf Fimi\-File}$<$ Sets\-Type $>$::read\-Line (vector$<$ int $>$ \& {\em line})\hspace{0.3cm}{\tt  [protected]}}\label{class_fimi_file_63c9a00918ab05006ef1dae5380f3e1d}
+
+
+Function reading a line of integer in the file. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em line}]stores the line of integers in a vector. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]false if end of file \end{Desc}
+\index{FimiFile@{Fimi\-File}!write@{write}}
+\index{write@{write}!FimiFile@{Fimi\-File}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type = int$>$ template$<$class Iterator, class Val$>$ void {\bf Fimi\-File}$<$ Sets\-Type $>$::write (Iterator {\em begin}, Iterator {\em end}, Val {\em measure})\hspace{0.3cm}{\tt  [protected]}}\label{class_fimi_file_359f265cd495d244b21d7c3bbe271620}
+
+
+Function write data in a file. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em begin}]iterator on the first element of the container to save \item[{\em supp}]the support of the itemset. \end{description}
+\end{Desc}
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+F:/i\-Zi/data/file/Fimi\-File.hxx\end{CompactItemize}

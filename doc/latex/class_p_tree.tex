@@ -1,0 +1,215 @@
+\section{PTree$<$ Sets\-Type, T $>$ Class Template Reference}
+\label{class_p_tree}\index{PTree@{PTree}}
+Template class representing a trie data structure of integer.  
+
+
+{\tt \#include $<$PTree.hxx$>$}
+
+\subsection*{Public Types}
+\begin{CompactItemize}
+\item 
+typedef {\bf It\-PTree}$<$ Sets\-Type, T $>$ {\bf iterator}\label{class_p_tree_aa29b0935d154c06ff0dfcacbff2d683}
+
+\begin{CompactList}\small\item\em Used to have the same syntax tha the STL. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf PTree} ({\bf Node}$<$ Sets\-Type, T $>$ $\ast$in\-Head=0, int in\-Size=0, int in\-Height=0)\label{class_p_tree_36e06775df6b20cad49bc53612744f33}
+
+\begin{CompactList}\small\item\em Constructor. \item\end{CompactList}\item 
+{\bf PTree} (const {\bf PTree} \&t)\label{class_p_tree_baf9201e7e17e366e1daaf82e4c059c5}
+
+\begin{CompactList}\small\item\em Copy constructor. \item\end{CompactList}\item 
+{\bf $\sim$PTree} ()\label{class_p_tree_8d8d9d39e2e7cea5c88c56a6e2d99f83}
+
+\begin{CompactList}\small\item\em Destructor. \item\end{CompactList}\item 
+template$<$class Container$>$ void {\bf push\_\-back} (Container \&set\-Element, T nb=T(1))
+\begin{CompactList}\small\item\em Insert a set of element in the trie. \item\end{CompactList}\item 
+template$<$class Input\-Iterator$>$ void {\bf push\_\-back} (Input\-Iterator first, Input\-Iterator last, T nb=T(1))
+\begin{CompactList}\small\item\em Insert a set of element in the trie. \item\end{CompactList}\item 
+void {\bf erase} ({\bf iterator} \&position)
+\begin{CompactList}\small\item\em Erase a set in the trie. \item\end{CompactList}\item 
+template$<$class Container$>$ void {\bf add\-To\-Node} ({\bf iterator} \&position, Container \&set\-Element, T nb=T(1))
+\begin{CompactList}\small\item\em Insert a set of element to the node pointed by an iterator. \item\end{CompactList}\item 
+template$<$class Input\-Iterator$>$ void {\bf add\-To\-Node} ({\bf iterator} \&position, Input\-Iterator first, Input\-Iterator last, T nb=T(1))
+\begin{CompactList}\small\item\em Insert a set of element to the node pointed by an iterator. \item\end{CompactList}\item 
+{\bf iterator} {\bf erase\-Node} ({\bf iterator} \&it)
+\begin{CompactList}\small\item\em Erase the node under the iterator. \item\end{CompactList}\item 
+{\bf It\-PTree}$<$ Sets\-Type, T $>$ {\bf begin\-Leaf} ()\label{class_p_tree_9be852a43758de579be2642e5dc82334}
+
+\begin{CompactList}\small\item\em Return an iterator on the first leaf of the trie (exploring the trie from the left to the right). \item\end{CompactList}\item 
+{\bf It\-PTree}$<$ Sets\-Type, T $>$ {\bf rbegin\-Leaf} ()\label{class_p_tree_61ab00242ada00f83f6210efa337e065}
+
+\begin{CompactList}\small\item\em Return an iterator on the first leaf of the trie (exploring the trie from the right to the left). \item\end{CompactList}\item 
+{\bf It\-PTree}$<$ Sets\-Type, T $>$ {\bf begin\-Root} ()\label{class_p_tree_7a13989068c070cd0c63517859aff760}
+
+\begin{CompactList}\small\item\em Return an iterator on the root node of the trie. \item\end{CompactList}\item 
+{\bf It\-PTree}$<$ Sets\-Type, T $>$ {\bf begin} ()\label{class_p_tree_3b8dac8ae570e9194aeece6fb1de32a2}
+
+\begin{CompactList}\small\item\em Return an iterator on the first element stored. \item\end{CompactList}\item 
+{\bf It\-PTree}$<$ Sets\-Type, T $>$ {\bf end} ()\label{class_p_tree_4bed11f5f1b7c6a8821cb962cf174751}
+
+\begin{CompactList}\small\item\em Return an iterator on the element after the last element stored. \item\end{CompactList}\item 
+int {\bf length} () const \label{class_p_tree_c2ac4b383a5a842b40a397dd5396bab6}
+
+\begin{CompactList}\small\item\em Return the length of the longest branch of the trie. \item\end{CompactList}\item 
+int {\bf size} () const \label{class_p_tree_d9a7994ba4a4eafdd56ad2a2ed2016e1}
+
+\begin{CompactList}\small\item\em Return the number of elements in the trie. \item\end{CompactList}\item 
+void {\bf set\-Size} (int in\-Size)\label{class_p_tree_95d13dd8e75352b21fbcfdb6cad4feb5}
+
+\begin{CompactList}\small\item\em Sets the size of the trie to a given value. \item\end{CompactList}\item 
+{\bf PTree} \& {\bf operator=} (const {\bf PTree} \&in\-PTree)
+\begin{CompactList}\small\item\em Affectation operator. \item\end{CompactList}\item 
+bool {\bf operator$<$} (const {\bf PTree} \&in\-Trie) const \label{class_p_tree_0bbb952dd9822a775e4454c3a1ef5bda}
+
+\begin{CompactList}\small\item\em Operator $<$ to process itemsets near the positive border. \item\end{CompactList}\item 
+int {\bf delete\-Children} ()\label{class_p_tree_009d68e1ac08d2d87697ffa1ae017984}
+
+\begin{CompactList}\small\item\em Method that deletes recursively the sub tree of this node. \item\end{CompactList}\item 
+{\bf Node}$<$ Sets\-Type, T $>$ $\ast$ {\bf get\-Head} () const \label{class_p_tree_ce39ce1f3afba5b22cb95e15ea3b8d6c}
+
+\begin{CompactList}\small\item\em Return the root node. \item\end{CompactList}\item 
+void {\bf set\-Head} ({\bf Node}$<$ Sets\-Type, T $>$ $\ast$in\-Head)\label{class_p_tree_380b31580b00ad7c093ceb3da0915582}
+
+\begin{CompactList}\small\item\em Initialize the root node. \item\end{CompactList}\item 
+void {\bf set\-Height} (int in\-Height)\label{class_p_tree_823d49f32572e6973cea7f693b28876e}
+
+\begin{CompactList}\small\item\em Initialize the height of the tree. \item\end{CompactList}\item 
+{\bf PTree} $\ast$ {\bf tr\-Min\-Opt} (int min\-Edge, int max\-Trans)
+\begin{CompactList}\small\item\em Method which calcul the minimal transversal of this set of set. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Static Public Attributes}
+\begin{CompactItemize}
+\item 
+static {\bf Recode\-To\-Int}$<$ Sets\-Type $>$ {\bf recode} = {\bf Recode\-To\-Int}$<$Sets\-Type$>$()\label{class_p_tree_a107b599ab3a2a57b350916423ea232e}
+
+\begin{CompactList}\small\item\em recode functor used to recode all the itemsets inserted in int and to keep the original order of the itemsets. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+int {\bf nbsets}\label{class_p_tree_0e7cd51500557bb0269d221bd9ffc88e}
+
+\begin{CompactList}\small\item\em Number of sets of integers in the trie. \item\end{CompactList}\item 
+int {\bf height}\label{class_p_tree_11613cc6da516052c27239b78dacdc5c}
+
+\begin{CompactList}\small\item\em Height of the trie. \item\end{CompactList}\item 
+{\bf Node}$<$ Sets\-Type, T $>$ $\ast$ {\bf head}\label{class_p_tree_3761bcbfb42d1376697cc315de0d19ed}
+
+\begin{CompactList}\small\item\em Root node of the trie. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+class {\bf It\-PTree$<$ Sets\-Type, T $>$}\label{class_p_tree_903af7ba64521b8f0bd0df111679c5ea}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Sets\-Type, class T = Boolean$>$ class PTree$<$ Sets\-Type, T $>$}
+
+Template class representing a trie data structure of integer. 
+
+This class store sets of integers in a trie. The integers are stored in a \char`\"{}bool vector\char`\"{} data strucuture in the nodes. If ith value of the vector is not empty, it means that the element i is in the node
+
+The template parameter Sets\-Type represents the type of the elements inserted in the trie. The template parameter represents the type of the \char`\"{}bool vector\char`\"{} used to represents the presence or not of an element. For example bool to only store the presence or not of the element, int to store an integer measure (such as the support)... 
+
+
+
+\subsection{Member Function Documentation}
+\index{PTree@{PTree}!addToNode@{addToNode}}
+\index{addToNode@{addToNode}!PTree@{PTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class T = Boolean$>$ template$<$class Input\-Iterator$>$ void {\bf PTree}$<$ Sets\-Type, T $>$::add\-To\-Node ({\bf iterator} \& {\em position}, Input\-Iterator {\em first}, Input\-Iterator {\em last}, T {\em nb} = {\tt T(1)})\hspace{0.3cm}{\tt  [inline]}}\label{class_p_tree_cbf41b66e32c5de9230f93d03c5785af}
+
+
+Insert a set of element to the node pointed by an iterator. 
+
+The template parameter represents a container of integers. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em position}]iterator on the node where the set must be inserted (the iterator is not mover during the operation). \item[{\em first}]iterator on the first element \item[{\em last}]iterator on the element after the last \item[{\em nb}]the number of times the set is inserted \end{description}
+\end{Desc}
+\index{PTree@{PTree}!addToNode@{addToNode}}
+\index{addToNode@{addToNode}!PTree@{PTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class T = Boolean$>$ template$<$class Container$>$ void {\bf PTree}$<$ Sets\-Type, T $>$::add\-To\-Node ({\bf iterator} \& {\em position}, Container \& {\em set\-Element}, T {\em nb} = {\tt T(1)})\hspace{0.3cm}{\tt  [inline]}}\label{class_p_tree_09c1a7a6dec73c9cb75420f4d9c5a161}
+
+
+Insert a set of element to the node pointed by an iterator. 
+
+The template parameter represents a container of integers. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em position}]iterator on the node where the set must be inserted(the iterator is not mover during the operation) . \item[{\em set\-Element}]the set of element (internal id ) to insert in the trie. \item[{\em nb}]the number of times the set is inserted \end{description}
+\end{Desc}
+\index{PTree@{PTree}!erase@{erase}}
+\index{erase@{erase}!PTree@{PTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class T = Boolean$>$ void {\bf PTree}$<$ Sets\-Type, T $>$::erase ({\bf iterator} \& {\em position})\hspace{0.3cm}{\tt  [inline]}}\label{class_p_tree_2e9e4620ff40789547e6a5fdbe5eb8e9}
+
+
+Erase a set in the trie. 
+
+Delete a branch of the trie. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em position}]erase the nodes corresponding to the given iterator (which is on a leaf node). \end{description}
+\end{Desc}
+\index{PTree@{PTree}!eraseNode@{eraseNode}}
+\index{eraseNode@{eraseNode}!PTree@{PTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class T = Boolean$>$ {\bf iterator} {\bf PTree}$<$ Sets\-Type, T $>$::erase\-Node ({\bf iterator} \& {\em it})\hspace{0.3cm}{\tt  [inline]}}\label{class_p_tree_8d8b9a315dc17b7b13a18dcb81d99f0f}
+
+
+Erase the node under the iterator. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em it}]erase the node at position it. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]iterator on the next node (ie, the next child node wrt lex order if exits, else the parent node ) . \end{Desc}
+\index{PTree@{PTree}!operator=@{operator=}}
+\index{operator=@{operator=}!PTree@{PTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class T = Boolean$>$ {\bf PTree}\& {\bf PTree}$<$ Sets\-Type, T $>$::operator= (const {\bf PTree}$<$ Sets\-Type, T $>$ \& {\em in\-PTree})\hspace{0.3cm}{\tt  [inline]}}\label{class_p_tree_0b0f87710d37e03751bb0fc07b109464}
+
+
+Affectation operator. 
+
+cout$<$$<$\char`\"{}SUB  : \char`\"{}; for\_\-each( it-$>${\bf begin()}{\rm (p.\,\pageref{class_p_tree_3b8dac8ae570e9194aeece6fb1de32a2})}, it-$>${\bf end()}{\rm (p.\,\pageref{class_p_tree_4bed11f5f1b7c6a8821cb962cf174751})}, print\-Container() ); cout$<$$<$it.measure()$<$$<$endl; getchar(); \index{PTree@{PTree}!push_back@{push\_\-back}}
+\index{push_back@{push\_\-back}!PTree@{PTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class T = Boolean$>$ template$<$class Input\-Iterator$>$ void {\bf PTree}$<$ Sets\-Type, T $>$::push\_\-back (Input\-Iterator {\em first}, Input\-Iterator {\em last}, T {\em nb} = {\tt T(1)})\hspace{0.3cm}{\tt  [inline]}}\label{class_p_tree_728345ce3e2c137ce2e16258847004be}
+
+
+Insert a set of element in the trie. 
+
+The template parameter represents the input iterators on the integers to insert int the trie. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em first}]iterator on the first element \item[{\em last}]iterator on the element after the last \item[{\em nb}]the number of times the set is inserted \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]true if a new set has been inserted (false if it was already in the trie) \end{Desc}
+\index{PTree@{PTree}!push_back@{push\_\-back}}
+\index{push_back@{push\_\-back}!PTree@{PTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class T = Boolean$>$ template$<$class Container$>$ void {\bf PTree}$<$ Sets\-Type, T $>$::push\_\-back (Container \& {\em set\-Element}, T {\em nb} = {\tt T(1)})\hspace{0.3cm}{\tt  [inline]}}\label{class_p_tree_a00717d40a6aa709644759370ccb0382}
+
+
+Insert a set of element in the trie. 
+
+This function corresponds to the classic {\bf push\_\-back( )}{\rm (p.\,\pageref{class_p_tree_a00717d40a6aa709644759370ccb0382})} function od STL container. The template parameter represents a container of integers. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em set\-Element}]the set of element to insert in the trie. \item[{\em nb}]the number of times the set is inserted \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]true if a new set has been inserted (false if it was already in the trie) \end{Desc}
+\index{PTree@{PTree}!trMinOpt@{trMinOpt}}
+\index{trMinOpt@{trMinOpt}!PTree@{PTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class T$>$ {\bf PTree}$<$ Sets\-Type, T $>$ $\ast$ {\bf PTree}$<$ Sets\-Type, T $>$::tr\-Min\-Opt (int {\em min\-Edge}, int {\em max\-Trans})}\label{class_p_tree_a3a65704846f2afb0005ec7b08f300ce}
+
+
+Method which calcul the minimal transversal of this set of set. 
+
+This method is optimised for our problem since it delete all the transversal of cardinality $<$= max\-Trans and do not conisder edge of size $>$= min\-Edge 
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+F:/i\-Zi/data\-Structures/trie/PTree.hxx\end{CompactItemize}

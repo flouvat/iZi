@@ -1,0 +1,63 @@
+\section{Stop\-Ite\-Distrib Class Reference}
+\label{class_stop_ite_distrib}\index{StopIteDistrib@{StopIteDistrib}}
+Functor used in parameter of {\bf Apriori}{\rm (p.\,\pageref{class_apriori})} to stop the execution of the algorithm wrt distribution of elements found.  
+
+
+{\tt \#include $<$Stop\-Ite\-Distrib.hxx$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf Stop\-Ite\-Distrib} (int inthreshold)\label{class_stop_ite_distrib_2a09ac7b4eb5215720e4e704085dc356}
+
+\begin{CompactList}\small\item\em Constructor. \item\end{CompactList}\item 
+template$<$class Cand\_\-Data\-Struct$>$ void {\bf update} (Cand\_\-Data\-Struct \&candidates)
+\begin{CompactList}\small\item\em Update the informations in the functor wrt the current step of the algorithme. \item\end{CompactList}\item 
+template$<$class Cand\_\-Data\-Struct$>$ bool {\bf operator()} (Cand\_\-Data\-Struct \&candidates)
+\begin{CompactList}\small\item\em Operator used to determine if the algorithm should stop. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+int {\bf level}\label{class_stop_ite_distrib_4e439159feb6fb1117a9b5ca471121ca}
+
+\begin{CompactList}\small\item\em Last level studied by the algorithm. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+int {\bf threshold}\label{class_stop_ite_distrib_c26278c24bbfe949fb0010be2b32b170}
+
+\begin{CompactList}\small\item\em threshold (if $>$ 1 last level studied). \item\end{CompactList}\item 
+int {\bf nb\-Cand}\label{class_stop_ite_distrib_0c03770bf116aab0df9410be57e94e61}
+
+\begin{CompactList}\small\item\em Number of candidates for the current level at th curretn step of the algorithm. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Functor used in parameter of {\bf Apriori}{\rm (p.\,\pageref{class_apriori})} to stop the execution of the algorithm wrt distribution of elements found. 
+
+If the threshold is less or equal than 1, stop the {\bf Apriori}{\rm (p.\,\pageref{class_apriori})} execution when the number of elments in the negative border found in an iteration on the number of candidates generated is less than a threshold given in input. If the threshold is greater than 1, stop when the algorithm has processed level = threshold. 
+
+
+
+\subsection{Member Function Documentation}
+\index{StopIteDistrib@{Stop\-Ite\-Distrib}!operator()@{operator()}}
+\index{operator()@{operator()}!StopIteDistrib@{Stop\-Ite\-Distrib}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Cand\_\-Data\-Struct$>$ bool Stop\-Ite\-Distrib::operator() (Cand\_\-Data\-Struct \& {\em candidates})\hspace{0.3cm}{\tt  [inline]}}\label{class_stop_ite_distrib_d6386032f32f664ed1b4813b3a645b62}
+
+
+Operator used to determine if the algorithm should stop. 
+
+Since the test is done after the pruning step of {\bf Apriori}{\rm (p.\,\pageref{class_apriori})}, we store \begin{Desc}
+\item[Returns:]true if the ratio on the number of elements of Bd- on the numbre of candidates generated is less thant the thresold. \end{Desc}
+\index{StopIteDistrib@{Stop\-Ite\-Distrib}!update@{update}}
+\index{update@{update}!StopIteDistrib@{Stop\-Ite\-Distrib}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Cand\_\-Data\-Struct$>$ void Stop\-Ite\-Distrib::update (Cand\_\-Data\-Struct \& {\em candidates})\hspace{0.3cm}{\tt  [inline]}}\label{class_stop_ite_distrib_70910a2a1fd59c7ba5873088891e4d2b}
+
+
+Update the informations in the functor wrt the current step of the algorithme. 
+
+By updating the informations in the functor we consider the informations discovered at another step of the algorithm. For example, an update is done in {\bf Apriori}{\rm (p.\,\pageref{class_apriori})} after generating (+ pre processing of the predicate) candidates. 
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+F:/i\-Zi/algorithms/Stop\-Ite\-Distrib.hxx\end{CompactItemize}

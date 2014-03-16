@@ -1,0 +1,76 @@
+\section{Fdep\-File Class Reference}
+\label{class_fdep_file}\index{FdepFile@{FdepFile}}
+Read a relation saved in the Fdep format.  
+
+
+{\tt \#include $<$Fdep\-File.hxx$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf Fdep\-File} (char $\ast$in\-File\-Name)\label{class_fdep_file_56ef78c6ca2658e52a2e07d985d41b23}
+
+\begin{CompactList}\small\item\em Constructor. \item\end{CompactList}\item 
+virtual {\bf $\sim$Fdep\-File} ()
+\begin{CompactList}\small\item\em Destructor. \item\end{CompactList}\item 
+template$<$class Container\-DB$>$ {\bf Fdep\-File} \& {\bf operator$>$$>$} (Container\-DB \&container)
+\begin{CompactList}\small\item\em Extract data of the file and insert it in a container. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+vector$<$ string $>$ {\bf attributes}\label{class_fdep_file_2a716ed1ecb7dfc8897266aa00a8ce69}
+
+\begin{CompactList}\small\item\em List of all the attributes. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+char $\ast$ {\bf file\-Name}\label{class_fdep_file_782e7766a7e9d68e8e84fafb61091817}
+
+\begin{CompactList}\small\item\em name of the file to used \item\end{CompactList}\item 
+ifstream {\bf readfile}\label{class_fdep_file_304ecc5605a362550142890ad870e75d}
+
+\begin{CompactList}\small\item\em Stream used to read in the file. \item\end{CompactList}\item 
+ofstream {\bf writefile}\label{class_fdep_file_47977170ade83f313f6755a0ead51056}
+
+\begin{CompactList}\small\item\em Stream used to write in the file. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Read a relation saved in the Fdep format. 
+
+The file format is: first line: the relation schema relation( rel-head, [ attr-1, attr-2, ..., attr-n ]), with rel-head the name of the relation, attr-i th name of the ith attribute. each other line: one tuple rel-head( value-of-attr-1, ..., value-of-attr-n ).
+
+see for more details: {\tt http://www.cs.bris.ac.uk/$\sim$flach/fdep/} 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{FdepFile@{Fdep\-File}!~FdepFile@{$\sim$FdepFile}}
+\index{~FdepFile@{$\sim$FdepFile}!FdepFile@{Fdep\-File}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}virtual Fdep\-File::$\sim$Fdep\-File ()\hspace{0.3cm}{\tt  [inline, virtual]}}\label{class_fdep_file_7f24ec32454849c0756eab48780f02db}
+
+
+Destructor. 
+
+The destructor close the file. 
+
+\subsection{Member Function Documentation}
+\index{FdepFile@{Fdep\-File}!operator>>@{operator$>$$>$}}
+\index{operator>>@{operator$>$$>$}!FdepFile@{Fdep\-File}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-DB$>$ {\bf Fdep\-File}\& Fdep\-File::operator$>$$>$ (Container\-DB \& {\em container})\hspace{0.3cm}{\tt  [inline]}}\label{class_fdep_file_bc7b742550cb389f78468e52cf4d9b59}
+
+
+Extract data of the file and insert it in a container. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em container}]where the data read is inserted (must have a push\_\-back function). \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]$\ast$this. \end{Desc}
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+F:/i\-Zi/data/file/Fdep\-File.hxx\end{CompactItemize}

@@ -1,0 +1,235 @@
+\section{Node$<$ Sets\-Type, Measure $>$ Class Template Reference}
+\label{class_node}\index{Node@{Node}}
+Class representing a node of the {\bf PTree}{\rm (p.\,\pageref{class_p_tree})}.  
+
+
+{\tt \#include $<$Node.hxx$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+template$<$class Container$>$ int {\bf push\_\-back} (Container \&set\-Element, Measure nb=Measure())
+\begin{CompactList}\small\item\em Push back a set of element in the trie. \item\end{CompactList}\item 
+template$<$class Input\-Iterator$>$ int {\bf push\_\-back} (Input\-Iterator \&first, Input\-Iterator \&last, Measure nb=Measure())
+\begin{CompactList}\small\item\em Push back a set of element in the trie. \item\end{CompactList}\item 
+template$<$class Container$>$ int {\bf insert\-Child\-Node} (int intid, Container \&set\-Element, Measure nb=Measure())
+\begin{CompactList}\small\item\em Insert in child nodes to the current one. \item\end{CompactList}\item 
+template$<$class Input\-Iterator$>$ int {\bf insert\-Child\-Node} (int intid, Input\-Iterator \&first, Input\-Iterator \&last, Measure nb=Measure())
+\begin{CompactList}\small\item\em Insert in child nodes to the current one. \item\end{CompactList}\item 
+int {\bf delete\-It\-Vect} (int index)
+\item 
+void {\bf add\-It\-Vect} (int item, {\bf Node} $\ast$ins\-Child=0, int sizecnts=1, int sizechilds=1)
+\item 
+{\bf Node} (const {\bf Node} \&in\-Node)
+\item 
+int {\bf delete\-Children} ()
+\item 
+{\bf Node} $\ast$ {\bf insert} (int $\ast$itemset, int level, Measure in\-Sup=Measure(true))
+\item 
+bool {\bf delete\-It} (vect\-UI $\ast$itemset, int \&pos)
+\item 
+void {\bf print} ({\bf Recode\-To\-Int}$<$ Sets\-Type $>$ $\ast$recode=0)
+\item 
+int {\bf read\-Itemsets} (const char $\ast$file\-Name, int $\ast$remap=0)
+\item 
+void {\bf save\-Itemsets} (const char $\ast$file\-Name, int $\ast$remap=0)
+\item 
+void {\bf save} (const char $\ast$file\-Name, {\bf Recode\-To\-Int}$<$ Sets\-Type $>$ $\ast$recode=0)
+\item 
+void {\bf save\-Data\-Set} (const char $\ast$file\-Name, int $\ast$remap=0)
+\item 
+bool {\bf included\-In} (int $\ast$itemset, int level, int spos=0)
+\item 
+bool {\bf include} (vect\-UI $\ast$itemset, int spos=0)
+\item 
+{\bf Node} $\ast$ {\bf complem} (vect\-UI \&list\-Elem, int \&max\-Size)
+\item 
+int {\bf gen\-Subsets} (vect\-UI $\ast$itemset, int spos, int depth)
+\item 
+{\bf Node} $\ast$ {\bf gen\-Subsets} (int size)
+\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+{\bf Node} $\ast$ {\bf parent}\label{class_node_039a14ac4e2dd6be991d7d81cf902296}
+
+\begin{CompactList}\small\item\em Parent node. \item\end{CompactList}\item 
+int {\bf id}\label{class_node_2a5bd864397d5f9015772e9163846f0f}
+
+\begin{CompactList}\small\item\em Item (internal id) in the parent node. \item\end{CompactList}\item 
+int {\bf offset}\label{class_node_23587c472f965fdb345553da8c43efbd}
+
+\begin{CompactList}\small\item\em Offset of counter vector. \item\end{CompactList}\item 
+vect\-T $\ast$ {\bf cnts}\label{class_node_9b5fd38081c3726f4b0080013dec36b1}
+
+\begin{CompactList}\small\item\em \char`\"{}bool vector\char`\"{} used to represents the presence or not of an element. \item\end{CompactList}\item 
+vect\-N $\ast$ {\bf childs}\label{class_node_ead9baf380a8c18deaf8cf3f4469c849}
+
+\begin{CompactList}\small\item\em Pointer on the corresponding child nodes. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+class {\bf It\-PTree$<$ Sets\-Type, Measure $>$}\label{class_node_c7d742f89a5418f941e82b344fe4c463}
+
+\item 
+class {\bf PTree$<$ Sets\-Type, Measure $>$}\label{class_node_75985e4c63d08b10230ccb3b9f097182}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Sets\-Type, class Measure = Boolean$>$ class Node$<$ Sets\-Type, Measure $>$}
+
+Class representing a node of the {\bf PTree}{\rm (p.\,\pageref{class_p_tree})}. 
+
+The template parameter Measure represents the type of the \char`\"{}bool vector\char`\"{} used to represents the presence or not of an element. For example bool to only store the presence or not of the element, int to store an integer measure (such as the support)...
+
+The template parameter Sets\-Type represents the type of the elements inserted in the trie. The template parameter Measure is eventually used to store additional informations associted with the sets stored. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure$>$ {\bf Node}$<$ Sets\-Type, Measure $>$::{\bf Node} (const {\bf Node}$<$ Sets\-Type, Measure $>$ \& {\em in\-Node})}\label{class_node_796ed77ffb6aa900993ce9b4a9700c1d}
+
+
+Recopy Constructor 
+
+\subsection{Member Function Documentation}
+\index{Node@{Node}!addItVect@{addItVect}}
+\index{addItVect@{addItVect}!Node@{Node}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure$>$ void {\bf Node}$<$ Sets\-Type, Measure $>$::add\-It\-Vect (int {\em item}, {\bf Node}$<$ Sets\-Type, Measure $>$ $\ast$ {\em ins\-Child} = {\tt 0}, int {\em sizecnts} = {\tt 1}, int {\em sizechilds} = {\tt 1})}\label{class_node_e5ee3b6e405b43d3358288f5c8e521c1}
+
+
+method that allocate new memory in the counters vector and modify the childs vector if necessary item is the new item to insert in the cnts vector ins\-Child is not null if we want to insert ins\-Child as a child of the new item being inserted sizecnts and sizechilds are the min size of vectors allocated at creation \index{Node@{Node}!complem@{complem}}
+\index{complem@{complem}!Node@{Node}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure$>$ {\bf Node}$<$ Sets\-Type, Measure $>$ $\ast$ {\bf Node}$<$ Sets\-Type, Measure $>$::complem (vect\-UI \& {\em list\-Elem}, int \& {\em max\-Size})}\label{class_node_a3be41dd7d34b71421bcce51edfd1516}
+
+
+method that return the complementary of this set of itemset (res) since we have all the items ordered and with the internal id begining at 1 to the number of items in the database we only have to use the total number of items to find the complementary \index{Node@{Node}!deleteChildren@{deleteChildren}}
+\index{deleteChildren@{deleteChildren}!Node@{Node}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure$>$ int {\bf Node}$<$ Sets\-Type, Measure $>$::delete\-Children ()}\label{class_node_51768328ab596c30ad943eb132b77d67}
+
+
+method that delete recursively the sub {\bf Node}{\rm (p.\,\pageref{class_node})} of this node \index{Node@{Node}!deleteIt@{deleteIt}}
+\index{deleteIt@{deleteIt}!Node@{Node}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure$>$ bool {\bf Node}$<$ Sets\-Type, Measure $>$::delete\-It (vect\-UI $\ast$ {\em itemset}, int \& {\em pos})}\label{class_node_98000cdef313e203299526f92d3215c9}
+
+
+method which delete an itemset in a set of itemset \index{Node@{Node}!deleteItVect@{deleteItVect}}
+\index{deleteItVect@{deleteItVect}!Node@{Node}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure$>$ int {\bf Node}$<$ Sets\-Type, Measure $>$::delete\-It\-Vect (int {\em index})}\label{class_node_8be4d0c5c3d8c8aa8e91c1f2aac0b119}
+
+
+method that delete the index-th item of the counters vector, and modify the childs vector if necessary ( the memory allocated to the vectors is reallocated wrt the modifications) return the current value of index (result +1 will be the new current value ) \index{Node@{Node}!genSubsets@{genSubsets}}
+\index{genSubsets@{genSubsets}!Node@{Node}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure$>$ {\bf Node}$<$ Sets\-Type, Measure $>$ $\ast$ {\bf Node}$<$ Sets\-Type, Measure $>$::gen\-Subsets (int {\em size})}\label{class_node_ddd4e181cfc9990fff6e966a076cf0de}
+
+
+method that return a set of the subsets of size \char`\"{}size\char`\"{} of this set of itemsets \index{Node@{Node}!genSubsets@{genSubsets}}
+\index{genSubsets@{genSubsets}!Node@{Node}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure$>$ int {\bf Node}$<$ Sets\-Type, Measure $>$::gen\-Subsets (vect\-UI $\ast$ {\em itemset}, int {\em spos}, int {\em depth})}\label{class_node_767d9fa45fed21095d870913db775be6}
+
+
+method that generate into this set the subsets of size \char`\"{}size\char`\"{} of an itemsets of size k \index{Node@{Node}!include@{include}}
+\index{include@{include}!Node@{Node}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure$>$ bool {\bf Node}$<$ Sets\-Type, Measure $>$::include (vect\-UI $\ast$ {\em itemset}, int {\em spos} = {\tt 0})}\label{class_node_7d48901c2a01e373b4273bf92b2edf58}
+
+
+method searching if itemset is include in one of the itemsets of this set of itemset \index{Node@{Node}!includedIn@{includedIn}}
+\index{includedIn@{includedIn}!Node@{Node}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure$>$ bool {\bf Node}$<$ Sets\-Type, Measure $>$::included\-In (int $\ast$ {\em itemset}, int {\em level}, int {\em spos} = {\tt 0})}\label{class_node_50472949d567c7a05548943eb8ce11d6}
+
+
+method searching if one itemset of of the sub tree rooted by this node is included into \char`\"{}itemset\char`\"{} be carefull itemset MUST BE ordered \index{Node@{Node}!insert@{insert}}
+\index{insert@{insert}!Node@{Node}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure$>$ {\bf Node}$<$ Sets\-Type, Measure $>$ $\ast$ {\bf Node}$<$ Sets\-Type, Measure $>$::insert (int $\ast$ {\em itemset}, int {\em level}, Measure {\em in\-Sup} = {\tt Measure(true)})}\label{class_node_7fade38fb4e2f586dd2287bcbfb9a6c8}
+
+
+method which insert an itemset in the sub tree rooted by the current node size\-Alloc determine the size allocated (reserved) to the childs at initilisation vector. If = to 0 the allocation is dynamically made when a new inserted item imply to enlarge the vector ( new memory allocation and recopy of the olds Vals are made) \index{Node@{Node}!insertChildNode@{insertChildNode}}
+\index{insertChildNode@{insertChildNode}!Node@{Node}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure = Boolean$>$ template$<$class Input\-Iterator$>$ int {\bf Node}$<$ Sets\-Type, Measure $>$::insert\-Child\-Node (int {\em intid}, Input\-Iterator \& {\em first}, Input\-Iterator \& {\em last}, Measure {\em nb} = {\tt Measure()})\hspace{0.3cm}{\tt  [inline]}}\label{class_node_6b56a65665f8100dc369fdda64691ee3}
+
+
+Insert in child nodes to the current one. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em intid}]internal id of the current element in the node \item[{\em first}]iterator on the first element \item[{\em last}]iterator on the element after the last \item[{\em nb}]the number of times the set is inserted \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]the size of the set inserted (if 0 the set was already in the trie) \end{Desc}
+\index{Node@{Node}!insertChildNode@{insertChildNode}}
+\index{insertChildNode@{insertChildNode}!Node@{Node}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure = Boolean$>$ template$<$class Container$>$ int {\bf Node}$<$ Sets\-Type, Measure $>$::insert\-Child\-Node (int {\em intid}, Container \& {\em set\-Element}, Measure {\em nb} = {\tt Measure()})\hspace{0.3cm}{\tt  [inline]}}\label{class_node_d1a110523a143505c594b0be9ae65626}
+
+
+Insert in child nodes to the current one. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em intid}]internal id of the current element in the node \item[{\em set\-Element}]the set of element to insert in the trie \item[{\em nb}]the number of times the set is inserted \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]the size of the set inserted (if 0 the set was already in the trie) \end{Desc}
+\index{Node@{Node}!print@{print}}
+\index{print@{print}!Node@{Node}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure$>$ void {\bf Node}$<$ Sets\-Type, Measure $>$::print ({\bf Recode\-To\-Int}$<$ Sets\-Type $>$ $\ast$ {\em recode} = {\tt 0})}\label{class_node_f4040669d0f5f254a01a07b631fceec0}
+
+
+print to screen all the itemset stored in the sub tree remap is a table for mapping the name of the items \index{Node@{Node}!push_back@{push\_\-back}}
+\index{push_back@{push\_\-back}!Node@{Node}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure = Boolean$>$ template$<$class Input\-Iterator$>$ int {\bf Node}$<$ Sets\-Type, Measure $>$::push\_\-back (Input\-Iterator \& {\em first}, Input\-Iterator \& {\em last}, Measure {\em nb} = {\tt Measure()})\hspace{0.3cm}{\tt  [inline]}}\label{class_node_6fd6696c9ee3f0b189b0d8f00ff53b34}
+
+
+Push back a set of element in the trie. 
+
+The template parameter represents the input iterators on the integers to insert int the trie. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em first}]iterator on the first element \item[{\em last}]iterator on the element after the last \item[{\em nb}]the number of times the set is inserted \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]the size of the set inserted (if 0 the set was already in the trie) \end{Desc}
+\index{Node@{Node}!push_back@{push\_\-back}}
+\index{push_back@{push\_\-back}!Node@{Node}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure = Boolean$>$ template$<$class Container$>$ int {\bf Node}$<$ Sets\-Type, Measure $>$::push\_\-back (Container \& {\em set\-Element}, Measure {\em nb} = {\tt Measure()})\hspace{0.3cm}{\tt  [inline]}}\label{class_node_cca2b11c6bdb5944d3dbe558383113f5}
+
+
+Push back a set of element in the trie. 
+
+This function corresponds to the classic {\bf push\_\-back( )}{\rm (p.\,\pageref{class_node_cca2b11c6bdb5944d3dbe558383113f5})} function od STL container. The template parameter represents a container of integers. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em set\-Element}]the set of element to insert in the trie \item[{\em nb}]the number of times the set is inserted \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]the size of the set inserted (if 0 the set was already in the trie) \end{Desc}
+\index{Node@{Node}!readItemsets@{readItemsets}}
+\index{readItemsets@{readItemsets}!Node@{Node}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure$>$ int {\bf Node}$<$ Sets\-Type, Measure $>$::read\-Itemsets (const char $\ast$ {\em file\-Name}, int $\ast$ {\em remap} = {\tt 0})}\label{class_node_05afc346678e3d677af92ae0941ace66}
+
+
+read from a file all the itemset and stored them into a prefix tree \index{Node@{Node}!save@{save}}
+\index{save@{save}!Node@{Node}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure$>$ void {\bf Node}$<$ Sets\-Type, Measure $>$::save (const char $\ast$ {\em file\-Name}, {\bf Recode\-To\-Int}$<$ Sets\-Type $>$ $\ast$ {\em recode} = {\tt 0})}\label{class_node_bab17c04ff98392f552c2e0fb21ae8b2}
+
+
+save into a file all the itemset stored in tree remap is a table for mapping the name of the items if remap is 0 it use the internal id \index{Node@{Node}!saveDataSet@{saveDataSet}}
+\index{saveDataSet@{saveDataSet}!Node@{Node}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure$>$ void {\bf Node}$<$ Sets\-Type, Measure $>$::save\-Data\-Set (const char $\ast$ {\em file\-Name}, int $\ast$ {\em remap} = {\tt 0})}\label{class_node_e57e552e42262a283c14f8f522b1ba16}
+
+
+save into a file all the itemset stored in tree remap is a table for mapping the name of the items according the FIMI format of datasets \index{Node@{Node}!saveItemsets@{saveItemsets}}
+\index{saveItemsets@{saveItemsets}!Node@{Node}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Sets\-Type, class Measure$>$ void {\bf Node}$<$ Sets\-Type, Measure $>$::save\-Itemsets (const char $\ast$ {\em file\-Name}, int $\ast$ {\em remap} = {\tt 0})}\label{class_node_80f20886fd8cfda7e36a2ee0ba761c2c}
+
+
+save into a file all the itemset stored in tree remap is a table for mapping the name of the items if remap is 0 it use the internal id 
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+F:/i\-Zi/data\-Structures/trie/Node.hxx\end{CompactItemize}

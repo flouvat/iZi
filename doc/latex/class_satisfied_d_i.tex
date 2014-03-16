@@ -1,0 +1,110 @@
+\section{Satisfied\-DI$<$ Data $>$ Class Template Reference}
+\label{class_satisfied_d_i}\index{SatisfiedDI@{SatisfiedDI}}
+Functor representing the predicate being a satisfied {\bf DI}{\rm (p.\,\pageref{class_d_i})} wrt to 2 relations.  
+
+
+{\tt \#include $<$Satisfied\-DI.hxx$>$}
+
+Inheritance diagram for Satisfied\-DI$<$ Data $>$::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{class_satisfied_d_i}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+template$<$class Input\-DBFormat$>$ {\bf Satisfied\-DI} (Data \&intable1, Input\-DBFormat \&input1, Data \&intable2, Input\-DBFormat \&input2)
+\begin{CompactList}\small\item\em Constructor. \item\end{CompactList}\item 
+{\bf $\sim$Satisfied\-DI} ()\label{class_satisfied_d_i_5e0ee1d4037733aaa542b849bdf98bb9}
+
+\begin{CompactList}\small\item\em Destructor. \item\end{CompactList}\item 
+template$<$class Iterator, class Measure$>$ bool {\bf operator()} (Iterator it\-Cand, Measure \&mes\-Cand)
+\begin{CompactList}\small\item\em Operator that test if a set of attributes is a satisfied {\bf DI}{\rm (p.\,\pageref{class_d_i})}. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Member Functions}
+\begin{CompactItemize}
+\item 
+template$<$class Container\-Attrib, class Container\-Project$>$ void {\bf projection} (Data $\ast$relation, Container\-Attrib \&set\-Of\-Attrib, Container\-Project \&project, {\bf Recode\-To\-Int}$<$ string $>$ \&num\-Attrib)
+\begin{CompactList}\small\item\em function used to project a relation wrt a set of attributes. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+Data $\ast$ {\bf table1}\label{class_satisfied_d_i_33f03c2c7d794f2c57f5702d31ff0a6e}
+
+\begin{CompactList}\small\item\em the first relation 1 \item\end{CompactList}\item 
+Data $\ast$ {\bf table2}\label{class_satisfied_d_i_06b1c1121dd6f8c006aab3d9960d7c8c}
+
+\begin{CompactList}\small\item\em the first relation 2 \item\end{CompactList}\item 
+{\bf Recode\-To\-Int}$<$ string $>$ {\bf num\-Attrib1}\label{class_satisfied_d_i_da548f7b628be78a89fddb160093ff82}
+
+\begin{CompactList}\small\item\em Used to get the numero of the attributes ( 1st, 2nd,...) of the first relation. \item\end{CompactList}\item 
+{\bf Recode\-To\-Int}$<$ string $>$ {\bf num\-Attrib2}\label{class_satisfied_d_i_e02512f1947af238a5aa185bb85284e6}
+
+\begin{CompactList}\small\item\em Used to get the numero of the attributes ( 1st, 2nd,...) of the first relation. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+class {\bf Process\-Tuples}
+\begin{CompactList}\small\item\em Functor used to projet all the tuples wrt attributes studied. \item\end{CompactList}\item 
+class {\bf project2}
+\begin{CompactList}\small\item\em Functor used to projet a tuple wrt the set of attributes studied. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Data$>$ class Satisfied\-DI$<$ Data $>$}
+
+Functor representing the predicate being a satisfied {\bf DI}{\rm (p.\,\pageref{class_d_i})} wrt to 2 relations. 
+
+This functor test if a {\bf DI}{\rm (p.\,\pageref{class_d_i})} is satisfied. The method used to test if a candidate is a a satisfied {\bf DI}{\rm (p.\,\pageref{class_d_i})} is the following one: process the projection wrt the attributes of the left side of the candidate {\bf DI}{\rm (p.\,\pageref{class_d_i})}. process the projection wrt the attributes of the right side of the candidate {\bf DI}{\rm (p.\,\pageref{class_d_i})}. check that each element of left side projection is included in the right side projection. return true if all the element are included.
+
+The template parameter Data is the type of the tablular data. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{SatisfiedDI@{Satisfied\-DI}!SatisfiedDI@{SatisfiedDI}}
+\index{SatisfiedDI@{SatisfiedDI}!SatisfiedDI@{Satisfied\-DI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Data$>$ template$<$class Input\-DBFormat$>$ {\bf Satisfied\-DI}$<$ Data $>$::{\bf Satisfied\-DI} (Data \& {\em intable1}, Input\-DBFormat \& {\em input1}, Data \& {\em intable2}, Input\-DBFormat \& {\em input2})\hspace{0.3cm}{\tt  [inline]}}\label{class_satisfied_d_i_484f8471fa06bd7b1595228a39713776}
+
+
+Constructor. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em intable1}]data of the first relation/table studied \item[{\em input1}]file containing the first relation/table studied \item[{\em intable2}]data of the second relation/table studied \item[{\em input2}]file containing the second relation/table studied \end{description}
+\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\index{SatisfiedDI@{Satisfied\-DI}!operator()@{operator()}}
+\index{operator()@{operator()}!SatisfiedDI@{Satisfied\-DI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Data$>$ template$<$class Iterator, class Measure$>$ bool {\bf Satisfied\-DI}$<$ Data $>$::operator() (Iterator {\em it\-Cand}, Measure \& {\em mes\-Cand})}\label{class_satisfied_d_i_834a0bf18d8fe074f5db2b78d8039264}
+
+
+Operator that test if a set of attributes is a satisfied {\bf DI}{\rm (p.\,\pageref{class_d_i})}. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em it\-Cand}]iterator (or pointer) on the set of attributes to test wrt the predicate \item[{\em mes\-Cand}]cardinality of the projection on the db of the attributes \end{description}
+\end{Desc}
+
+
+Reimplemented from {\bf Predicate} {\rm (p.\,\pageref{class_predicate_6fb1a75dba2268f75738f335f403e46c})}.\index{SatisfiedDI@{Satisfied\-DI}!projection@{projection}}
+\index{projection@{projection}!SatisfiedDI@{Satisfied\-DI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class Data$>$ template$<$class Container\-Attrib, class Container\-Project$>$ void {\bf Satisfied\-DI}$<$ Data $>$::projection (Data $\ast$ {\em relation}, Container\-Attrib \& {\em set\-Of\-Attrib}, Container\-Project \& {\em project}, {\bf Recode\-To\-Int}$<$ string $>$ \& {\em num\-Attrib})\hspace{0.3cm}{\tt  [protected]}}\label{class_satisfied_d_i_e30e2a55ae4c56e1a3cb744536b8cb07}
+
+
+function used to project a relation wrt a set of attributes. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em relation}]class representing the relation. \item[{\em Container\-Attrib}]set of attribute used for the projection. \item[{\em Container\-Project}]container used to store the projection. \end{description}
+\end{Desc}
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+F:/i\-Zi/problems/DI/Satisfied\-DI.hxx\end{CompactItemize}
